@@ -13,24 +13,6 @@
               });
             });
         </script>
-        <script>
-            // external js: masonry.pkgd.js, imagesloaded.pkgd.js
-
-            // init Masonry
-            var grid = document.querySelector('.content');
-
-            var msnry = new Masonry( grid, {
-            itemSelector: '.content-item',
-            columnWidth: '.content-sizer',
-            percentPosition: true,
-            gutter:10
-            });
-
-            imagesLoaded( grid ).on( 'progress', function() {
-            // layout Masonry after each image loads
-            msnry.layout();
-            });
-        </script>
     </head>
     <body>
         <div class="nav">
