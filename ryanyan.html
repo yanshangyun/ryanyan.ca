@@ -5,12 +5,32 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script src="masonry.pkgd.min.js"></script>
+        <script src="imagesloaded.pkgd.js"></script>
         <script>
             $(function() {
               $(".drag").draggable({
               });
             });
-          </script>
+        </script>
+        <script>
+            // external js: masonry.pkgd.js, imagesloaded.pkgd.js
+
+            // init Masonry
+            var grid = document.querySelector('.content');
+
+            var msnry = new Masonry( grid, {
+            itemSelector: '.content-item',
+            columnWidth: '.content-sizer',
+            percentPosition: true,
+            gutter:10
+            });
+
+            imagesLoaded( grid ).on( 'progress', function() {
+            // layout Masonry after each image loads
+            msnry.layout();
+            });
+        </script>
     </head>
     <body>
         <div class="nav">
@@ -26,9 +46,9 @@
                     <p>
                         Where I:
                         <br>
-                        am → <span class="drag"><a href="">RISD DESIGN GUILD</a></span><span class="drag">TORONTO</span>
+                        am → <span class="drag"><a href="">RISD DESIGN GUILD</a></span><span class="drag">PROVIDENCE</span>
                         <br>
-                        was → <span class="drag">NOTHING DESIGN STUDIO</span>
+                        was → <span class="drag">NOTHING DESIGN STUDIO</span><span class="drag">TORONTO</span>
                     </p>
                     <p>
                         Contact me <i>(for resume and portfolio):</i>
@@ -47,16 +67,33 @@
                 </div>
             </div>
             <div class="content">
-                <div class="item">
-                    <video width="300px" autoplay muted loop>
-                        <source src="stairs1 2.mp4" type="video/mp4">
+                <div class="content-sizer"></div>
+                <div class="content-item">
+                    <video autoplay muted loop>
+                        <source src="files/stairs-1.mp4" type="video/mp4">
                     </video>
-                    <img src="swatch-ani.gif" width="100px">
-                    <img src="swatch-ani.gif" width="200px">
-                    <img src="swatch-ani.gif" width="100px">
-                    <img src="swatch-ani.gif" width="150px">
-                    <img src="swatch-ani.gif" width="300px">
-                    <img src="swatch-ani.gif" width="100px">
+                </div>
+                <div class="content-item">
+                    <img src="files/demolition-1.jpg">
+                </div>
+                <div class="content-item">
+                    <img src="files/swatch-ani.gif"></img>
+                </div>
+                <div class="content-item">
+                    <video autoplay muted loop>
+                        <source src="files/vocal-extinct-1.mov" type="video/mp4">
+                    </video>
+                </div>
+                <div class="content-item">
+                    <img src="files/riso-ani-1.gif">
+                </div>
+                <div class="content-item">
+                    <img src="files/souvenir-1.jpg">
+                </div>
+                <div class="content-item">
+                    <video autoplay muted loop>
+                        <source src="files/conflict-1.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </div>
