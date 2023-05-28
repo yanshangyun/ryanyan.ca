@@ -2,80 +2,108 @@
     <head>
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <script src="script.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-        <script src="masonry.pkgd.min.js"></script>
-        <script src="imagesloaded.pkgd.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0-rc.1/jquery-ui.js"></script>
         <script>
             $(function() {
               $(".drag").draggable({
               });
             });
         </script>
+    
     </head>
     <body>
+        <script>
+            $( function() {
+              $( "#resizable" ).resizable();
+            //   aspectRatio:true;
+            } );
+        </script>
         <div class="nav">
-            <p>&nbsp/) /)<br>(&nbsp<span onClick="changeFace()" id="face-change">• - •</span>) *<br>RYAN (<span onClick="changeName()" id="name-change">SHANGYUN</span>) YAN</p>
+            <p>
+                <span style="background-color:white">&nbsp/) /) &nbsp</span>
+                <br>
+                <span style="background-color:white">(&nbsp<span onClick="changeFace()" id="face-change">• - •</span>) *</span>
+                <br>
+                <span style="background-color:white">RYAN (<span onClick="changeName()" id="name-change">SHANGYUN</span>) YAN</span>
+            </p>
         </div>
         <div class="main">
             <div class="two-split">
                 <!-- right column -->
                 <div class="column">
                     <p>
-                        Born and raised up north in <span class="drag">CANADA</span> now flourishing a little less north at <span class="drag">RISD</span> studying <span class="drag">DESIGN</span><span class="drag">COMPUTATIONS</span> and <span class="drag">LINGUISTICS</span>
+                        Born and raised up north in <span class="drag info info">CANADA</span> now flourishing a little less north at <span class="drag info">RISD</span> studying <span class="drag info">DESIGN</span><span class="drag info">COMPUTATIONS</span> and <span class="drag info">LINGUISTICS</span>
                     </p>
                     <p>
                         Where I:
                         <br>
-                        am → <span class="drag"><a href="">RISD DESIGN GUILD</a></span><span class="drag">PROVIDENCE</span>
+                        am → <span class="drag info"><a href="">RISD DESIGN GUILD</a></span><span class="drag info">PROVIDENCE</span>
                         <br>
-                        was → <span class="drag">NOTHING DESIGN STUDIO</span><span class="drag">TORONTO</span>
+                        was → <span class="drag info"><a href="">NOTHING DESIGN STUDIO</a></span><span class="drag info">TORONTO</span>
+                        <br>
+                        will be → <span class="drag info"><a href="mailto:ryan02@risd.edu?subject=WE%20WANT%20TO%20HIRE%20YOU">???</a></span>
                     </p>
                     <p>
                         Contact me <i>(for resume and portfolio):</i>
                         <br>
                         <a href="mailto:ryan02@risd.edu">Email</a>
                         <br>
-                        <a href="https://www.instagram.com/yanshngyun">Instagram</a>
+                        <a href="https://www.instagram.com/yanshngyun/">Instagram</a>
                     </p>
                 </div>
                 <!-- left column -->
                 <div class="column" id="mood">
                     <p>
-                        Moodboard <i>(to move around):</i><br>
-                        <span class="drag">٩(ˊᗜˋ*)و</span><span class="drag">(๑'ᵕ'๑)⸝*</span><span class="drag">/ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗</span><span class="drag">৻(  •̀ ᗜ •́  ৻)</span><span class="drag">૮ • ﻌ - ა</span><span class="drag">ଘ(੭ˊᵕˋ)੭</span>
+                        Current moodboard <i>(to move around):</i><br>
+                        <span class="drag info">٩(ˊᗜˋ*)و</span><span class="drag info">MOTION</span><span class="drag info">B+W</span><span class="drag info">(๑'ᵕ'๑)⸝*</span><span class="drag info">ENFJ</span><span class="drag info">/ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗</span><span class="drag info">ToTK</span><span class="drag info">৻(  •̀ ᗜ •́  ৻)</span><span class="drag info">૮ • ﻌ - ა</span><span class="drag info">ଘ(੭ˊᵕˋ)੭</span>
                     </p>
                 </div>
             </div>
             <div class="content">
-                <div class="content-sizer"></div>
-                <div class="content-item">
+                <div id="resizable"></div>
+                <div class="content-item drag">
+                    <img src="files/me.jpg">
+                </div>
+                <div class="content-item drag">
+                    <img src="files/document-1.jpg">
+                </div>
+                <div class="content-item drag">
                     <video autoplay muted loop>
                         <source src="files/stairs-1.mp4" type="video/mp4">
                     </video>
                 </div>
-                <div class="content-item">
+                <div class="content-item drag">
                     <img src="files/demolition-1.jpg">
                 </div>
-                <div class="content-item">
+                <div class="content-item drag">
                     <img src="files/swatch-ani.gif"></img>
                 </div>
-                <div class="content-item">
+                <div class="content-item drag">
                     <video autoplay muted loop>
                         <source src="files/vocal-extinct-1.mov" type="video/mp4">
                     </video>
                 </div>
-                <div class="content-item">
+                <div class="content-item drag">
                     <img src="files/riso-ani-1.gif">
                 </div>
-                <div class="content-item">
+                <div class="content-item drag">
                     <img src="files/souvenir-1.jpg">
                 </div>
-                <div class="content-item">
+                <div class="content-item drag">
+                    <img src="files/postcard-1.gif">
+                </div>
+
+                <div class="content-item drag">
+                    <img src="files/opening-night.jpg">
+                </div>
+                <div class="content-item drag">
                     <video autoplay muted loop>
                         <source src="files/conflict-1.mp4" type="video/mp4">
                     </video>
+                </div>
+                <div class="content-item drag">
+                    <img src="files/what-we-see-1.jpg">
                 </div>
             </div>
         </div>
