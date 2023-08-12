@@ -1,0 +1,22 @@
+.project-desc-wrapper{
+    width:30%;
+}
+
+.project-desc{
+    width:30%;
+    position:fixed;
+}
+
+.project-images{
+    width:65%;
+}
+
+.project-images img{
+    width:100%;
+    margin-bottom:10px;
+}
+
+.project-images video{
+    width:100%;
+    margin-bottom:10px;
+}

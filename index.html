@@ -10,105 +10,153 @@
               });
             });
         </script>
-    
     </head>
     <body>
+        <!--nav-->
         <div class="nav">
-            <p style="background-color:black; color:white">
-                [as of June 2023] Currently under construction. <i>Links and layout may be broken.</i>
-            </p>
-            <p>
-                <span style="background-color:white">&nbsp/) /) &nbsp</span>
-                <br>
-                <span style="background-color:white">(&nbsp<span onClick="changeFace()" id="face-change">• - •</span>) *</span>
-                <br>
-                <span style="background-color:white">RYAN (<span onClick="changeName()" id="name-change">SHANGYUN</span>) YAN</span>
-            </p>
-        </div>
+            <div class="bar">
+                <div class="marquee">
+                    <span class="marquee-content">
+                        Some elements are draggable&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;There are some hidden easter eggs on hover.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Website in development.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;   <i>Links and layout may be broken &#9785;.</i>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Last updated: August 2023&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;RYAN YAN &#169; 2023&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    </span>
+                    <span class="marquee-content">
+                        Some elements are draggable&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;There are some hidden easter eggs on hover.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Website in development.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;   <i>Links and layout may be broken &#9785;.</i>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Last updated: August 2023&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;RYAN YAN &#169; 2023&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    </span>
+                </div>
+            </div>
+            <div class="title">
+                <p>
+                    <span style="background-color:white">&nbsp/) /) &nbsp</span>
+                    <br>
+                    <span style="background-color:white">(&nbsp<span onmouseover="changeFace()" id="face-change">• - •</span>) *</span>
+                    <br>
+                    <span style="background-color:white">RYAN (<span onmouseover="changeName()" id="name-change">SHANGYUN</span>) YAN</span>
+                </p>
+            </div>
+        </div> <!--nav end-->
+        <!--main-->
         <div class="main">
-            <div class="two-split">
-                <!-- right column -->
-                <div class="column">
-                    <p>
-                        Born and raised up north in <span class="drag info info">CANADA</span> now flourishing a little less north at <span class="drag info">RISD</span> studying <span class="drag info">DESIGN</span><span class="drag info">COMPUTATIONS</span> and <span class="drag info">LINGUISTICS</span>
-                    </p>
-                    <p>
-                        Where I:
-                        <br>
-                        am → <span class="drag info"><a href="">RISD DESIGN GUILD</a></span><span class="drag info">PROVIDENCE</span>
-                        <br>
-                        was → <span class="drag info"><a href="">NOTHING DESIGN STUDIO</a></span><span class="drag info">TORONTO</span>
-                        <br>
-                        will be → <span class="drag info"><a href="mailto:ryan02@risd.edu?subject=WE%20WANT%20TO%20HIRE%20YOU">???</a></span>
-                    </p>
-                    <p>
-                        Contact me <i>(for resume and portfolio):</i>
-                        <br>
-                        <a href="mailto:ryan02@risd.edu">Email</a>
-                        <br>
-                        <a href="https://www.instagram.com/yanshngyun/">Instagram</a>
-                    </p>
-                </div>
-                <!-- left column -->
-                <div class="column" id="mood">
-                    <p>
-                        Current moodboard <i>(to move around):</i><br>
-                        <span class="drag info">٩(ˊᗜˋ*)و</span><span class="drag info">MOTION</span><span class="drag info">B+W</span><span class="drag info">(๑'ᵕ'๑)⸝*</span><span class="drag info">ENFJ</span><span class="drag info">/ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗</span><span class="drag info">ToTK</span><span class="drag info">৻(  •̀ ᗜ •́  ৻)</span><span class="drag info">૮ • ﻌ - ა</span><span class="drag info">ଘ(੭ˊᵕˋ)੭</span>
-                    </p>
-                </div>
-            </div>
+            <!--hero-->
+            <div class="hero">
+                <div class="two-split">
+                    <!--left column-->
+                    <div class="column">
+                        <p>
+                            Born and raised up north in <span class="drag info info" id="canada">CANADA</span> now flourishing a little less north at <span class="drag info blue"><a href="https://www.risd.edu/" target="_blank">RISD &#8599</a></span> studying <span class="drag info">DESIGN</span><span class="drag info">COMPUTATIONS</span> and <span class="drag info">LINGUISTICS</span>
+                        </p>
+                        <p>
+                            Where I:
+                            <br>
+                            am → <a class="drag info blue" href="https://risdguild.com/" target="_blank">RISD DESIGN GUILD &#8599</a><span class="drag info">PROVIDENCE</span>
+                            <br>
+                            was → <span class="drag info blue"><a href="https://www.behance.net/nds" target="_blank">NOTHING DESIGN STUDIO &#8599</a></span><span class="drag info">TORONTO</span>
+                            <br>
+                            will be → <a class="drag info blue" onmouseover="hireMe()" onmouseout="resetHireMe()" id="hire" href="mailto:ryan02@risd.edu?subject=WE%20WANT%20TO%20HIRE%20YOU">???</a>
+                        </p>
+                        <p>
+                            Contact me <i>(for resume and portfolio):</i>
+                            <br>
+                            <a href="mailto:ryan02@risd.edu" target="_blank">Email</a>
+                            <br>
+                            <a href="https://www.instagram.com/yanshngyun/" target="_blank">Instagram</a>
+                        </p>
+                    </div>
+                    <!--right column-->
+                    <div class="column" id="mood">
+                        <p>
+                            Current moodboard <i>(to move around (and edit)):</i><br>
+                            <span class="drag info" contenteditable="true">٩(ˊᗜˋ*)و</span><span class="drag info" contenteditable="true">MOTION</span><span class="drag info" contenteditable="true">B+W</span><span class="drag info" contenteditable="true">(๑'ᵕ'๑)⸝*</span><span class="drag info" contenteditable="true">ENFJ</span><span class="drag info" contenteditable="true">/ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗</span><span class="drag info" contenteditable="true">ToTK</span><span class="drag info" contenteditable="true" onfocus="clearPlaceholder(this)">Click to type</span><span class="drag info" contenteditable="true">৻(  •̀ ᗜ •́  ৻)</span><span class="drag info" contenteditable="true">૮ • ﻌ - ა</span><span class="drag info" contenteditable="true">ଘ(੭ˊᵕˋ)੭</span>
+                        </p>
+                    </div>
+                </div> <!--two-split end-->
+            </div> <!--hero end--> 
+            <!--projects-->
             <div class="content-main">
-            <!-- LEFT -->
-            <div class="content">
-                <!-- <div class="content-item drag">
-                    <img src="files/me.jpg">
-                </div> -->
-                <div class="content-item drag">
-                    <img src="files/yearbook/photo-hold.jpg">
+                <div class="drag">
+                    <div class="item">
+                        <video autoplay muted loop>
+                            <source src="files/stairs-1.mp4" type="video/mp4">
+                        </video>    
+                    </div>
                 </div>
-                <div class="content-item drag">
-                    <video autoplay muted loop>
-                        <source src="files/new-latin-demo.mp4" type="video/mp4">
-                    </video>
+                <div class="drag">
+                    <div class="item">
+                        <img src="files/photos/P6090128.jpg">
+                        <p><i>(2023年6月) </i>Asakusa 浅草, Tokyo 東京</p>
+                        <hr>
+                    </div>
                 </div>
-                <div class="content-item drag">
-                    <video autoplay muted loop>
-                        <source src="files/vocal-extinct.mp4" type="video/mp4">
-                    </video>
+                <div class="drag">
+                    <div class="item">
+                        <img src="files/snowdrop-1.png">        
+                    </div>
                 </div>
-                <div class="content-item drag">
-                    <img src="files/swatch-ani.gif">
+                <div class="drag">
+                    <div class="item">
+                        <img src="files/photos/me.JPG">
+                        <p><i>(2023年5月) </i>Sophomore review</p>
+                        <hr>
+                    </div>
                 </div>
-                <div class="content-item drag">
-                    <img src="files/demolition-1.jpg">
+                <div class="drag">
+                    <div class="item">
+                        <img src="files/riso-ani-2.gif">
+                    </div>
                 </div>
-            </div>
-            <!-- MIDDLE -->
-            <div class="content">
-                <div class="content-item drag">
-                    <img src="files/yearbook/scan-1.jpg">
+                <div class="drag">
+                    <div class="item">
+                        <img src="files/demolition-1.jpg">
+                    </div>
                 </div>
-                <div class="content-item drag">
-                    <img src="files/document-1.jpg">
+                <div class="drag">
+                    <div class="item">
+                        <img src="files/bears-1.gif">
+                    </div>
                 </div>
-                <div class="content-item drag">
-                    <video autoplay muted loop>
-                        <source src="files/bears.mov" type="video/mp4">
-                    </video>
+                <div class="drag">
+                    <div class="item">
+                        <img src="files/yearbook/photo-hold.jpg">
+                    </div>
                 </div>
-            </div>
-            <!-- RIGHT -->
-            <div class="content">
-                <div class="content-item drag">
-                    <video autoplay muted loop>
-                        <source src="files/stairs-1.mp4" type="video/mp4">
-                    </video>
+                <div class="drag">
+                    <div class="item">
+                        <img src="files/swatch-ani.gif">
+                    </div>
                 </div>
-                <div class="content-item drag">
-                    <img src="files/riso-ani-1.gif">
+                <div class="drag">
+                    <div class="item">
+                        <img src="files/shooting-star.gif">
+                    </div>
                 </div>
-            </div>
-            </div>
-        </div>
+                <div class="drag">
+                    <div class="item">
+                        <video autoplay muted loop>
+                            <source src="files/square-composite.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="drag">
+                    <div class="item">
+                        <img src="files/document-1.jpg">
+                    </div>
+                </div>
+                <div class="drag">
+                    <div class="item">
+                        <video autoplay muted loop>
+                            <source src="files/photos/P7260050.mp4" type="video/mp4"> 
+                        </video>
+                        <p><i>(2023年7月) </i>Fishing trip (Left: Steven, Right: Kai)</p>
+                            <hr>
+                    </div>
+                </div>
+                <div class="drag">
+                    <div class="item">
+                        <video autoplay muted loop>
+                        <source src="files/conflict-1.mp4" type="video/mp4">
+                        </video>    
+                    </div>
+                </div>
+            </div> <!--projects end-->
+        </div> <!--main end-->
     </body>
 </html>
