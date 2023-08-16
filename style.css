@@ -128,6 +128,7 @@ a{
 .item p{
     margin-top:5px;
     margin-bottom:10px;
+    width:100%;
 }
 
 .item hr{
