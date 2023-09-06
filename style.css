@@ -3,7 +3,7 @@ body{
     font-weight:300;
     font-size:12px;
     margin:20px;
-    /* cursor:default; */
+    cursor:default;
 }
 
 ::selection{
@@ -18,7 +18,7 @@ p{
 a{
     color:blue;
     text-decoration:none;
-    cursor:default;
+    cursor:pointer;
 }
 
 .nav{
@@ -108,17 +108,19 @@ a{
     gap:5%;
 }
 
+/* projects */
+
 .column{
     width:45%;
 }
 
 .content-main{
     columns:3 150px;
-    gap:10px;
+    gap:30px;
 }
 
 .item{
-    margin-bottom:10px;
+    margin-bottom:30px;
 
     transition:
         transform
@@ -143,7 +145,16 @@ a{
     width:100%;
 }
 
+.unavailable:hover{
+    filter:grayscale();
+    cursor:not-allowed;
+}
+
 /* text drag */
+
+.drag{
+    cursor:move;
+}
 
 .info{
     z-index:999;
