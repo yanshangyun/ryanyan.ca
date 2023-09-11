@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+    <head>
+        <link href="/style.css" rel="stylesheet" type="text/css"/>
+        <link href="/project-style.css" rel="stylesheet" type="text/css"/>
+        <script src="/script.js"></script>
+    </head>
+    <body>
+        <!--nav-->
+        <div class="nav">
+            <div class="bar">
+                <div class="marquee">
+                    <span class="marquee-content">
+                    </span>
+                    <span class="marquee-content">
+                    </span>
+                </div>
+            </div>
+            <div class="title">
+                <p>
+                    <span style="background-color:white">&nbsp/) /) &nbsp</span>
+                    <br>
+                    <span style="background-color:white">(&nbsp<span onmouseover="changeFace()" id="face-change">• - •</span>) *</span>
+                    <br>
+                    <span style="background-color:white">RYAN (<span onmouseover="changeName()" id="name-change">SHANGYUN</span>) YAN</span>
+                </p>
+            </div>
+        </div> <!--nav end-->
+        <!--main-->
+        <div class="main">
+            <div class="two-split">
+                <!--description-->
+                <div class="project-desc-wrapper">
+                    <div class="project-desc">
+                        <p><a href="/index.html">&#8592 Back <i>(home)</i></a></p>
+                        <br>
+                        <p id="project-title"><b>RISD YEARBOOK 2023</b></p> <!--title-->
+                        <p id="project-info"> <!--info-->
+                            in → June 2023
+                            <br>
+                            for → Rhode Island School of Design
+                            <br>
+                            with → RISD Design Guild <i><a id="showPeople" onclick="showExtra()">(show everyone)</a></i>
+                            <i id="extra">
+                                Anmol Govinda Rao, Christine Wang, Ella Lawless, Emma Caamaño, Henry Spuria, Jacob Lee, Joyce Ho, Kayla Feng, Matthew Cuschieri, Maxton O'Connor, Mizuki Hanada, Ollantay Avila, Ryan Yan, Sharlene Deng, Truman Lesak, Yasemin Sarihan    
+                            </i>
+                        </p>
+                        <hr>
+                        <p> <!--project description-->
+                            <p>
+                                The 2023 RISD Yearbook is divided into three separate books: a collection of interviews with faculty members [1], a catalog of student portraits [2], and a photo index documenting our campus [3]. The books borrow a visual language found in travel documents — passports, visas, and licenses — all of which illicit transitions. These details might appear repetitive or benign, but their power comes from the information they denote and the experiences they suggest.
+                            </p>
+                            <p>
+                                To showcase the Class of 2023's experiences, hand-made stamps were used to affix each student with their own personal history at RISD.
+                            </p>                       
+                        </p>
+                    </div> <!--project-desc end-->
+                </div> <!--project-desc-wrapper end-->
+                <!--images-->
+                <div class="project-images">
+                    <img src="/files/yearbook/photo-hold.jpg">
+                    <img src="/files/yearbook/scan-photo-spread.jpg">
+                    <img src="/files/yearbook/first-spread.jpg">
+                    <img src="/files/yearbook/scan-all-books.jpg">
+                    <img src="/files/yearbook/type-open.jpg">
+                    <img src="/files/yearbook/open.jpg">
+                    <img src="/files/yearbook/flip.jpg">
+                </div> <!--project-images end-->
+            </div>
+        </div> <!--main end-->
+        <script>
+            const projectTitle = document.getElementById("project-title").innerText;
+            const projectInfo = document.getElementById("project-info").innerText;
+
+            const marqueeContentSpans = document.querySelectorAll(".marquee-content");
+
+            marqueeContentSpans.forEach(span => {
+                const formattedText = `&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${projectTitle}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${projectInfo}`.replace(/\n/g, "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;");
+
+                span.innerHTML = formattedText;
+            });
+        </script>
+    </body>

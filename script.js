@@ -1,3 +1,5 @@
+//name change
+
 function changeName(){
     var x = document.getElementById("name-change");
     if(x.innerHTML == "SHANGYUN"){
@@ -7,6 +9,8 @@ function changeName(){
         x.innerHTML = "SHANGYUN";
     }
 }
+
+//bunny face change
 
 function changeFace(){
     var x = document.getElementById("face-change");
@@ -33,10 +37,54 @@ function changeFace(){
     }
 }
 
+//language change
+
+// function changeCanada(){
+//     var x = document.getElementById("canada");
+//     if(x.innerHTML == "CANADA"){
+//         x.innerHTML = "加拿大";
+//     }
+//     else{
+//         x.innerHTML = "CANADA";
+//     }
+// }
+
+// function changeDesign(){
+//     var x = document.getElementById("design");
+//     if(x.innerHTML == "DESIGN"){
+//         x.innerHTML = "编码";
+//     }
+//     else{
+//         x.innerHTML = "DESIGN";
+//     }
+// }
+
+// function changeComputations(){
+//     var x = document.getElementById("computations");
+//     if(x.innerHTML == "COMPUTATIONS"){
+//         x.innerHTML = "设计";
+//     }
+//     else{
+//         x.innerHTML = "COMPUTATIONS";
+//     }
+// }
+
+// function changeLinguistics(){
+//     var x = document.getElementById("linguistics");
+//     if(x.innerHTML == "LINGUISTICS"){
+//         x.innerHTML = "语言学";
+//     }
+//     else{
+//         x.innerHTML = "LINGUISTICS";
+//     }
+// }
+
+//hire me
+
 function hireMe(){
     var x = document.getElementById("hire");
     if(x.innerHTML == "???"){
-        x.innerHTML = "HIRE ME! &#8599";
+        x.innerHTML = "HIRE ME! &#8599&#xFE0E";
     }
     else{
         x.innerHTML = "???";
@@ -55,5 +103,20 @@ function resetHireMe(){
 function clearPlaceholder(element) {
     if (element.textContent.trim() === 'Click to type'){
       element.textContent = '';
+    }
+}
+
+//show extra
+
+function showExtra(){
+    var x = document.getElementById('extra');
+    var y = document.getElementById('showPeople');
+    if(x.style.display == 'none'){
+        x.style.display = 'block';
+        y.innerHTML = "(hide everyone)";
+    }
+    else{
+        x.style.display = "none";
+        y.innerHTML = "(show everyone)";
     }
 }
