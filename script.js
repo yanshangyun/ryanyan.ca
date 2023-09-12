@@ -113,10 +113,10 @@ function showExtra(){
     var y = document.getElementById('showPeople');
     if(x.style.display == 'none'){
         x.style.display = 'block';
-        y.innerHTML = "(hide everyone)";
+        y.innerHTML = "(hide)";
     }
     else{
         x.style.display = "none";
-        y.innerHTML = "(show everyone)";
+        y.innerHTML = "(show more)";
     }
 }

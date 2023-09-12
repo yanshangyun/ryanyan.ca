@@ -7,8 +7,8 @@ body{
 }
 
 ::selection{
-    color:black;
-    background-color:rgb(4, 180, 60);
+    color:white;
+    background-color:green;
 }
 
 p{
@@ -16,7 +16,7 @@ p{
 }
 
 a{
-    color:rgb(4, 180, 60);
+    color:green;
     text-decoration:none;
     cursor:pointer;
 }
@@ -146,7 +146,7 @@ a{
 }
 
 .unavailable:hover{
-    filter:grayscale();
+    filter:grayscale() brightness(0.5);
     cursor:not-allowed;
 }
 
@@ -176,7 +176,7 @@ a{
 }
 
 .blue{
-    border:0.5px solid green(0, 186, 53);
+    border:0.5px solid green;
 }
 
 /* mobile */
@@ -194,18 +194,13 @@ a{
 
     .blue.info:hover{
         /* background-color:blue; */
-        box-shadow:1px 1px 0px 1px rgb(4, 180, 60);
+        box-shadow:1px 1px 0px 1px green;
     }
 
     .blue.info:active{
         /* background-color:blue; */
-        box-shadow:0px 0px 0px 0px rgb(4, 180, 60);
-        transform:translate(0px, 0px);
+        box-shadow:0px 0px 0px 0px green
     }
-
-    /* #canada:hover{
-        background-image:linear-gradient(to right,red,white);
-    } */
 }
 
 @media only screen and (max-width:600px){
