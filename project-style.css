@@ -4,6 +4,7 @@
 
 .project-desc{
     width:30%;
+    max-width:500px;
     position:fixed;
 }
 

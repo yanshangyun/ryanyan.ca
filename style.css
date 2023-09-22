@@ -2,8 +2,10 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-weight:300;
     font-size:12px;
-    margin:20px;
+    margin:0 auto;
+    padding:20px;
     cursor:default;
+    max-width:1600px;
 }
 
 ::selection{
@@ -42,9 +44,9 @@ a{
 	background-color:black;
     box-shadow:0 0 0 1px white;
     color:white;
-    width:100vw;
+    min-width:1620px;
     height:15px;
-    margin-left:-15px;
+    margin-left:-20px;
     margin-top:-10px;
     margin-bottom:20px;
     overflow:hidden;
@@ -115,7 +117,7 @@ a{
 }
 
 .content-main{
-    columns:3 150px;
+    columns:4 350px;
     gap:10px;
 }
 
@@ -203,7 +205,7 @@ a{
     }
 }
 
-@media only screen and (max-width:600px){
+@media only screen and (max-width:1170px){
     .column{
         width:100%;
     }

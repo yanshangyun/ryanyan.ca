@@ -113,10 +113,26 @@ function showExtra(){
     var y = document.getElementById('showPeople');
     if(x.style.display == 'none'){
         x.style.display = 'block';
-        y.innerHTML = "(hide)";
+        y.innerHTML = "(-)";
     }
     else{
         x.style.display = "none";
-        y.innerHTML = "(show more)";
+        y.innerHTML = "(+)";
     }
 }
+
+//resolution
+
+function updateResolution() {
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+  
+    const resolutionElement = document.getElementById('resolution');
+  
+    resolutionElement.textContent = windowWidth + 'x' + windowHeight;
+  }
+  
+  window.addEventListener('load', updateResolution);
+  
+  window.addEventListener('resize', updateResolution);
+  
