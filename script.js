@@ -130,9 +130,40 @@ function updateResolution() {
     const resolutionElement = document.getElementById('resolution');
   
     resolutionElement.textContent = windowWidth + 'x' + windowHeight;
+}
+
+window.addEventListener('load', updateResolution);
+window.addEventListener('resize', updateResolution);
+
+//dark light
+
+function toggleMode() {
+
+    var x = document.getElementById("toggleDark");
+    if(x.innerHTML == "DARK MODE"){
+        x.innerHTML = "LIGHT MODE";
+    }
+    else{
+        x.innerHTML = "DARK MODE";
+    }
+
+    const root = document.documentElement;
+    const currentMode = root.getAttribute('data-mode');
+
+    const newMode = currentMode === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-mode', newMode);
+    
+    if (currentMode === 'light') {
+        root.style.setProperty('--background-color', 'white');
+        root.style.setProperty('--foreground-color', 'black');
+        root.style.setProperty('--main-color', 'rgb(14, 92, 195)');
+        root.setAttribute('data-mode', 'dark');
+    }
+    else {
+        root.style.setProperty('--background-color', 'black');
+        root.style.setProperty('--foreground-color', 'white');
+        root.style.setProperty('--main-color', 'rgb(3, 194, 252)');
+    }
   }
   
-  window.addEventListener('load', updateResolution);
-  
-  window.addEventListener('resize', updateResolution);
   

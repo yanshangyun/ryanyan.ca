@@ -1,3 +1,9 @@
+:root{
+    --main-color:rgb(14, 92, 195);
+    --background-color:white;
+    --foreground-color:black;
+}
+
 body{
     font-family: Arial, Helvetica, sans-serif;
     font-weight:300;
@@ -6,19 +12,21 @@ body{
     padding:20px;
     cursor:default;
     max-width:1600px;
+    background-color:var(--background-color);
 }
 
 ::selection{
-    color:white;
-    background-color:green;
+    color:var(--background-color);
+    background-color:var(--main-color);
 }
 
 p{
     line-height:14px;
+    color:var(--foreground-color);
 }
 
 a{
-    color:green;
+    color:var(--main-color);
     text-decoration:none;
     cursor:pointer;
 }
@@ -33,7 +41,7 @@ a{
 }
 
 .title p{
-    box-shadow:0 0 0 1px white;
+    box-shadow:0 0 0 1px var(--background-col);
     display:inline;
 }
 
@@ -41,9 +49,9 @@ a{
 
 .bar{
     position:fixed;
-	background-color:black;
-    box-shadow:0 0 0 1px white;
-    color:white;
+	background-color:var(--foreground-color);
+    box-shadow:0 0 0 1px var(--background-color);
+    color:var(--background-color);
     min-width:1620px;
     height:15px;
     margin-left:-20px;
@@ -60,7 +68,7 @@ a{
 
 .bar:hover{
     background-image:linear-gradient(to right,rgb(17, 179, 17),rgb(85, 148, 255),red,orange,rgb(255, 225, 0));
-    color:black;
+    color:var(--foreground-color);
     height:30px;
 }
 
@@ -117,7 +125,7 @@ a{
 }
 
 .content-main{
-    columns:4 350px;
+    columns:3 200px;
     gap:10px;
 }
 
@@ -162,8 +170,8 @@ a{
     z-index:999;
     padding-left:3px;
     padding-right:3px;
-    border:0.5px solid black;
-    background-color:white;
+    border:0.5px solid var(--foreground-color);
+    background-color:var(--background-color);
     user-select:none;
     display:inline-block;
 
@@ -178,14 +186,19 @@ a{
 }
 
 .blue{
-    border:0.5px solid green;
+    border:0.5px solid var(--main-color);
+}
+
+#toggleDark:hover{
+    background-color:var(--foreground-color);
+    color:var(--background-color);
 }
 
 /* mobile */
 
-@media only screen and (min-width:600px){
+@media (orientation:landscape){
     .info:hover{
-        box-shadow:1px 1px 0px 1px black;
+        box-shadow:1px 1px 0px 1px var(--foreground-color);
         transform:translate(-1px, -1px);
     }
     
@@ -196,16 +209,17 @@ a{
 
     .blue.info:hover{
         /* background-color:blue; */
-        box-shadow:1px 1px 0px 1px green;
+        box-shadow:1px 1px 0px 1px var(--main-color);
     }
 
     .blue.info:active{
         /* background-color:blue; */
-        box-shadow:0px 0px 0px 0px green
+        box-shadow:0px 0px 0px 0px var(--main-color);
     }
+
 }
 
-@media only screen and (max-width:1170px){
+@media (orientation:portrait){
     .column{
         width:100%;
     }
