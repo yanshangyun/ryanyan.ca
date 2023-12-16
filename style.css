@@ -127,6 +127,7 @@ a{
 .content-main{
     columns:3 200px;
     gap:10px;
+    break-inside:avoid;
 }
 
 .item{
