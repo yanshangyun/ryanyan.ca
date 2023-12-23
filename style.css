@@ -36,7 +36,7 @@ a{
     position:fixed;
 }
 
-.title{
+#header-container{
     margin-top:40px;
 }
 
@@ -165,9 +165,6 @@ a{
 
 .drag{
     cursor:move;
-}
-
-.info{
     z-index:999;
     padding-left:3px;
     padding-right:3px;
@@ -190,6 +187,26 @@ a{
     border:0.5px solid var(--main-color);
 }
 
+.drag:hover{
+    box-shadow:1px 1px 0px 1px var(--foreground-color);
+    transform:translate(-1px, -1px);
+}
+
+.drag:active{
+    box-shadow:0px 0px 0px 0px;
+    transform:translate(0px, 0px);
+}
+
+.blue.drag:hover{
+    /* background-color:blue; */
+    box-shadow:1px 1px 0px 1px var(--main-color);
+}
+
+.blue.drag:active{
+    /* background-color:blue; */
+    box-shadow:0px 0px 0px 0px var(--main-color);
+}
+
 #toggleDark:hover{
     background-color:var(--foreground-color);
     color:var(--background-color);
@@ -198,25 +215,6 @@ a{
 /* mobile */
 
 @media (orientation:landscape){
-    .info:hover{
-        box-shadow:1px 1px 0px 1px var(--foreground-color);
-        transform:translate(-1px, -1px);
-    }
-    
-    .info:active{
-        box-shadow:0px 0px 0px 0px;
-        transform:translate(0px, 0px);
-    }
-
-    .blue.info:hover{
-        /* background-color:blue; */
-        box-shadow:1px 1px 0px 1px var(--main-color);
-    }
-
-    .blue.info:active{
-        /* background-color:blue; */
-        box-shadow:0px 0px 0px 0px var(--main-color);
-    }
 
 }
 

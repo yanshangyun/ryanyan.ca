@@ -15,15 +15,15 @@
                     </span>
                 </div>
             </div>
-            <div class="title">
-                <p>
-                    <span style="background-color:var(--background-color)">&nbsp/) /) &nbsp</span>
-                    <br>
-                    <span style="background-color:var(--background-color)">(&nbsp<span onmouseover="changeFace()" id="face-change">• - •</span>) *</span>
-                    <br>
-                    <span style="background-color:var(--background-color)">RYAN (<span onmouseover="changeName()" id="name-change">SHANGYUN</span>) YAN</span>
-                </p>
-            </div>
+            <!--title-->
+            <div id="header-container"></div>
+            <script>
+                fetch('/header.html')
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById('header-container').innerHTML = html;
+                    });
+            </script>
         </div> <!--nav end-->
         <!--main-->
         <div class="main">

@@ -15,15 +15,15 @@
                     </span>
                 </div>
             </div>
-            <div class="title">
-                <p>
-                    <span style="background-color:var(--background-color)">&nbsp/) /) &nbsp</span>
-                    <br>
-                    <span style="background-color:var(--background-color)">(&nbsp<span onmouseover="changeFace()" id="face-change">• - •</span>) *</span>
-                    <br>
-                    <span style="background-color:var(--background-color)">RYAN (<span onmouseover="changeName()" id="name-change">SHANGYUN</span>) YAN</span>
-                </p>
-            </div>
+            <!--title-->
+            <div id="header-container"></div>
+            <script>
+                fetch('/header.html')
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById('header-container').innerHTML = html;
+                    });
+            </script>
         </div> <!--nav end-->
         <!--main-->
         <div class="main">
@@ -41,8 +41,10 @@
                             <br>
                             with → RISD Design Guild <i><a id="showPeople" onclick="showExtra()">(+)</a></i>
                             <i id="extra">
-                                Christine Wang, Emma Caamaño, Ollantay Avila, Ryan Yan 
+                                Christine Wang, Emma Caamaño, Ollantay Avila, Ryan Yan
                             </i>
+                            <br>
+                            role → design, visual direction, motion design, photography, (and an orientation leader ofc!)
                         </p>
                         <hr>
                         <p> <!--project description-->
@@ -62,6 +64,8 @@
                         <source src="/files/orientation-23/new.mp4" type="video/mp4"> 
                     </video>
                     <img src="/files/orientation-23/james-tattoo.jpg">
+                    <img src="/files/orientation-23/scan0002.jpg">
+                    <p>Initial conceptualization using graph paper</p>
                     <video autoplay muted loop>
                         <source src="/files/orientation-23/bag.mp4" type="video/mp4"> 
                     </video>
