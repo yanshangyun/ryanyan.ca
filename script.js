@@ -37,6 +37,36 @@ function changeFace(){
     }
 }
 
+//tooltip mouse follow
+
+document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.item').forEach(function(itemElem){
+        itemElem.addEventListener('mousemove', function(e){
+            var tooltip = this.querySelector('.tooltiptext');
+            if (!tooltip) return; // Skip if there's no tooltip in this item
+
+            var rect = this.getBoundingClientRect();
+
+            var tooltipX = e.clientX - rect.left;
+            var tooltipY = e.clientY - rect.top;
+
+            var offsetX = 15;
+            var offsetY = 15;
+
+            tooltip.style.left = (tooltipX + offsetX) + 'px';
+            tooltip.style.top = (tooltipY + offsetY) + 'px';
+            tooltip.style.visibility = 'visible';
+        });
+
+        itemElem.addEventListener('mouseleave', function() {
+            var tooltip = this.querySelector('.tooltiptext');
+            if (tooltip) {
+                tooltip.style.visibility = 'hidden';
+            }
+        });
+    });
+});
+
 //language change
 
 // function changeCanada(){
