@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+    <head>
+        <link href="/style.css" rel="stylesheet" type="text/css"/>
+        <link href="/project-style.css" rel="stylesheet" type="text/css"/>
+        <script src="/script.js"></script>
+        <title>GATHERING SOUNDS</title>
+    </head>
+    <body>
+        <!--nav-->
+        <div class="nav">
+            <div class="bar">
+                <div class="marquee">
+                    <span class="marquee-content">
+                    </span>
+                    <span class="marquee-content">
+                    </span>
+                </div>
+            </div>
+            <!--title-->
+            <div id="header-container"></div>
+            <script>
+                fetch('/header.html')
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById('header-container').innerHTML = html;
+                    });
+            </script>
+        </div> <!--nav end-->
+        <!--main-->
+        <div class="main">
+            <div class="two-split">
+                <!--description-->
+                <div class="project-desc-wrapper">
+                    <div class="project-desc">
+                        <p><a href="/index.html">&#8592 Back <i>(home)</i></a></p>
+                        <br>
+                        <p id="project-title"><b>POST-DIGITAL COLLAPSE</b></p> <!--title-->
+                        <p id="project-info"> <!--info-->
+                            in → December 2023
+                            <br>
+                            for → Programming Images
+                            <br>
+                            with → Travess Smalley
+                        </p>
+                        <hr>
+                        <p> <!--project description-->
+                            <a href="https://ryan02-risd.github.io/gathering-sounds/index.html" target="_blank">Gathering Sounds</a> is an ongoing sound archive project designed to capture an integral, but often overlooked essence of the human experience: sound. Sounds are intrinsically tied to our everyday lives and how we understand the world around us. This understanding is unique and emotional—it has the ability to transport us through space and time to the places we remember and the people we love. The Gathering Sounds website allows users create 'mix-tapes' by dragging and dropping sound bytes, personally recorded and collected, onto the disc. After 'burning' the disc, it is added to a collection of other mixtapes from people around the world to be listen to.
+                            <br>
+                            <br>
+                            Coded in HTML, CSS, Javascript. 3D interactions created in Spline. Made possible with the power of teamwork and friendship <3.
+                        </p>
+                    </div> <!--project-desc end-->
+                </div> <!--project-desc-wrapper end-->
+                <!--images-->
+                <div class="project-images">
+                    <video autoplay muted loop>
+                        <source src="/files/post-digital-collapse/comp-1.mp4" type="video/mp4">
+                    </video>
+                    <img src="/files/post-digital-collapse/pdc_1.jpg">
+                    <video autoplay muted loop>
+                        <source src="/files/post-digital-collapse/Comp 3.mp4" type="video/mp4">
+                    </video>
+                    <video autoplay muted loop>
+                        <source src="/files/post-digital-collapse/green.mp4" type="video/mp4">
+                    </video>
+                    
+                    <img src="/files/gathering-sounds/fish.png">
+                    <video autoplay muted loop>
+                        <source src="/files/gathering-sounds/spline.mp4" type="video/mp4">
+                    </video>
+                    <img src="/files/gathering-sounds/team.jpg">                                    
+                </div> <!--project-images end-->
+            </div>
+        </div> <!--main end-->
+        <script>
+            const projectTitle = document.getElementById("project-title").innerText;
+            const projectInfo = document.getElementById("project-info").innerText;
+
+            const marqueeContentSpans = document.querySelectorAll(".marquee-content");
+
+            marqueeContentSpans.forEach(span => {
+                const formattedText = `&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${projectTitle}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${projectInfo}`.replace(/\n/g, "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;");
+
+                span.innerHTML = formattedText;
+            });
+        </script>
+    </body>
