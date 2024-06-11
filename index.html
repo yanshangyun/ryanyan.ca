@@ -1,266 +1,286 @@
 <html>
-    <head>
-        <title>RYAN YAN</title>
-        <link rel="icon" type="image/gif" href="favicon.gif">
-        <link href="style.css" rel="stylesheet" type="text/css"/>
-        <script src="script.js"></script>
-        <!--jquery-->
-        <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.0-rc.1/jquery-ui.js"></script>
+  <head>
+    <title>RYAN YAN</title>
+    <link rel="icon" type="image/gif" href="favicon.gif">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <script src="script.js"></script>
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0-rc.1/jquery-ui.js"></script>
+    <script>
+      $(function() {
+        $(".drag").draggable({
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!--nav-->
+    <div class="nav">
+      <div class="bar">
+        <div class="marquee">
+          <span class="marquee-content">
+              Some elements are draggable&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;There are some hidden easter eggs on hover.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Website always in development.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i>Links and layout may be broken.</i>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Last updated: May 2024&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;RYAN YAN &#169; 2024&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          </span>
+          <span class="marquee-content">
+              Some elements are draggable&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;There are some hidden easter eggs on hover.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Website always in development.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i>Links and layout may be broken.</i>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Last updated: May 2024&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;RYAN YAN &#169; 2024&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          </span>
+        </div>
+      </div>
+        <!--title-->
+        <div id="header-container"></div>
         <script>
-            $(function() {
-              $(".drag").draggable({
-              });
+          fetch('/header.html')
+            .then(response => response.text())
+            .then(html => {
+              document.getElementById('header-container').innerHTML = html;
             });
         </script>
-    </head>
-    <body>
-        <!--nav-->
-        <div class="nav">
-            <div class="bar">
-                <div class="marquee">
-                    <span class="marquee-content">
-                        Some elements are draggable&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;There are some hidden easter eggs on hover.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Website always in development.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i>Links and layout may be broken &#9785;.</i>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Last updated: March 2024&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;RYAN YAN &#169; 2024&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    </span>
-                    <span class="marquee-content">
-                        Some elements are draggable&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;There are some hidden easter eggs on hover.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Website always in development.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i>Links and layout may be broken &#9785;.</i>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Last updated: March 2024&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;RYAN YAN &#169; 2024&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    </span>
-                </div>
-            </div>
-            <!--title-->
-            <div id="header-container"></div>
-            <script>
-                fetch('/header.html')
-                    .then(response => response.text())
-                    .then(html => {
-                        document.getElementById('header-container').innerHTML = html;
-                    });
-            </script>
-        </div> <!--nav end-->
+    </div> <!--nav end-->
         <!--main-->
-        <div class="main">
-            <!--hero-->
-            <div class="hero">
-                <div class="two-split">
-                    <!--left column-->
-                    <div class="column">
-                        <p>
-                            (b.2003) raised up north in <span class="drag">CANADA</span> now flourishing a little less north at <a class="drag blue" href="https://www.risd.edu/" target="_blank">RISD &#8599&#xFE0E</a> studying <span class="drag">DESIGN</span><span class="drag">COMPUTATION</span><span class="drag">LINGUISTICS</span>.
-                        </p>
-                        <p>
-                            Where I:
-                            <br>
-                            am → <a class="drag blue" href="https://risdguild.com/" target="_blank">RISD DESIGN GUILD &#8599&#xFE0E</a><span class="drag">PROVIDENCE</span>
-                            <br>
-                            was → <a class="drag blue" href="https://madebynothing.com/" target="_blank">NOTHING DESIGN STUDIO &#8599&#xFE0E</a><span class="drag">TORONTO</span>
-                            <br>
-                            will be → <a class="drag blue" href="https://apple.com/" target="_blank">APPLE &#8599&#xFE0E</a>
-                            <!-- <a class="drag blue" onmouseover="hireMe()" onmouseout="resetHireMe()" id="hire" href="mailto:ryan02@risd.edu?subject=WE%20WANT%20TO%20HIRE%20YOU">???</a> -->
-                        </p>
-                        <hr>
-                        <p>
-                            Reach me <i>(I love to chat):</i>
-                            <br>
-                            <a href="mailto:ryan02@risd.edu" target="_blank">Email</a>
-                            <br>
-                            <a href="https://www.instagram.com/yanshngyun/" target="_blank">Instagram</a>
-                            <br>
-                            <a href="https://www.linkedin.com/in/ryanshangyunyan/" target="_blank">LinkedIn</a>
-                            <br>
-                            <a href="https://drive.google.com/file/d/1cMjLBCFcePDYtcy5BSrCDygGiq8UU1uA/view?usp=sharing" target="_blank">Resume</a>
-                        </p>
-                    </div>
-                    <!--right column-->
-                    <div class="column" id="mood">
-                        <p>
-                            Current moodboard <i>(to move around (and edit)):</i><br>
-                            <span class="drag" contenteditable="true">٩(ˊᗜˋ*)و</span><span class="drag" contenteditable="true">LEARNING BLENDER</span><span class="drag" contenteditable="true">TEXTURES...</span><span class="drag" contenteditable="true">(๑'ᵕ'๑)⸝*</span><span class="drag" contenteditable="true">ENFJ</span><span class="drag" contenteditable="true">/ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗</span><span class="drag" contenteditable="true">STAYING WARM</span><span class="drag" contenteditable="true">৻(  •̀ ᗜ •́  ৻)</span><span class="drag" contenteditable="true" onfocus="clearPlaceholder(this)">Click to type</span><span class="drag" contenteditable="true">૮ • ﻌ - ა</span><span class="drag" contenteditable="true">学习读中文</span><span class="drag" id="toggleDark" onclick="toggleMode()">DARK MODE</span><span class="drag" contenteditable="true">ଘ(੭ˊᵕˋ)੭</span><span class="drag">RESOLUTION: <span id="resolution"></span></span><span class="drag" contenteditable="true">CATS</span>
-                        </p>
-                    </div>
-                </div> <!--two-split end-->
-            </div> <!--hero end--> 
-            <!--projects-->
-            <div class="content-main">
+      <div class="main">
+        <!--hero-->
+        <div class="hero">
+          <div class="two-split">
+            <!--left column-->
+            <div class="column">
+              <p>
+                Born and raised up north in <span class="drag">CANADA</span> now flourishing a little less north at <a class="drag blue" href="https://www.risd.edu/" target="_blank">RISD &#8599&#xFE0E</a> studying <span class="drag">DESIGN</span><span class="drag">COMPUTATION</span><span class="drag">LINGUISTICS</span>
+              </p>
+              <p>
+                Where I:
+                <br>
+                am → <a class="drag blue" href="https://apple.com/" target="_blank">APPLE &#8599&#xFE0E</a><a class="drag blue" href="https://risdguild.com/" target="_blank">RISD DESIGN GUILD &#8599&#xFE0E</a>
+                <br>
+                was → <a class="drag blue" href="https://madebynothing.com/" target="_blank">NOTHING DESIGN STUDIO &#8599&#xFE0E</a>
+                <!-- <br>
+                will be → <a class="drag blue" href="https://apple.com/" target="_blank">APPLE &#8599&#xFE0E</a> -->
+                <!-- <a class="drag blue" onmouseover="hireMe()" onmouseout="resetHireMe()" id="hire" href="mailto:ryan02@risd.edu?subject=WE%20WANT%20TO%20HIRE%20YOU">???</a> -->
+              </p>
+              <hr>
+              <p>
+                Reach me <i>(I love to chat):</i>
+                <br>
+                <a href="mailto:ryan02@risd.edu" target="_blank">Email</a>
+                <br>
+                <a href="https://www.instagram.com/yanshngyun/" target="_blank">Instagram</a>
+                <br>
+                <a href="https://www.linkedin.com/in/ryanshangyunyan/" target="_blank">LinkedIn</a>
+                <br>
+                <!-- <a href="https://drive.google.com/file/d/1cMjLBCFcePDYtcy5BSrCDygGiq8UU1uA/view?usp=sharing" target="_blank">Resume</a> -->
+              </p>
+            </div>
+            <!--right column-->
+            <div class="column" id="mood">
+              <p>
+                  Current moodboard <i>(to move around (and edit)):</i><br>
+                  <span class="drag" contenteditable="true">٩(ˊᗜˋ*)و</span><span class="drag" contenteditable="true">REPOTTING PLANTS</span><span class="drag" contenteditable="true">TEXTURES...</span><span class="drag" contenteditable="true">(๑'ᵕ'๑)⸝*</span><span class="drag" contenteditable="true">ENFJ</span><span class="drag" contenteditable="true">/ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗</span><span class="drag" contenteditable="true">FIGHTING POLLEN</span><span class="drag" contenteditable="true">৻(  •̀ ᗜ •́  ৻)</span><span class="drag" contenteditable="true" onfocus="clearPlaceholder(this)">Click to type</span><span class="drag" contenteditable="true">૮ • ﻌ - ა</span><span class="drag" contenteditable="true">学习读中文</span><span class="drag" id="toggleDark" onclick="toggleMode()">DARK MODE</span><span class="drag" contenteditable="true">ଘ(੭ˊᵕˋ)੭</span><span class="drag">RESOLUTION: <span id="resolution"></span></span><span class="drag" contenteditable="true">CATS</span>
+              </p>
+            </div>
+          </div> <!--two-split end-->
+        </div> <!--hero end--> 
+          <!--projects-->
+          <div class="content-main">
+            <div class="item">
+              <a href="projects/mutual-flourishing.html">
+                <span class="tooltiptext">Interview with Companion—Platform</span>
+                <img src="files/companion-platform/full1.jpg">  
+              </a>
+            </div>
+            <!-- <div class="item">
+              <span class="tooltiptext">Web sound archive project</span>
+              <a href="projects/gathering-sounds.html">
+                <video autoplay muted loop>
+                  <source src="files/legion/full.mp4" type="video/mp4">
+                </video>
+              </a>
+            </div> -->
+            <!-- <div class="unavailable item">
+              <span class="tooltiptext">Working on documentation!</span>
+              <video autoplay muted loop>
+                <source src="files/urbanist-network/checker.mp4" type="video/mp4">
+              </video>    
+            </div> -->
+            <div class="item">
+              <span class="tooltiptext">Poster for Impulse Dance Company</span>
+              <img src="files/impulse.png">
+            </div>
+            <div class="unavailable item">
+              <span class="tooltiptext">Working on documentation!</span>
+              <video autoplay muted loop>
+                <source src="files/airfoil/new_1.mp4" type="video/mp4">
+              </video>    
+            </div>
+            <div class="item">
+              <span class="tooltiptext">Web sound archive project</span>
+              <a href="projects/gathering-sounds.html">
+                <video autoplay muted loop>
+                  <source src="files/gathering-sounds/gathering-sounds.mp4" type="video/mp4">
+                </video>
+              </a>
+            </div>
               <div class="item">
-                <span class="tooltiptext">Impulse Dance Company</span>
-                <img src="files/impulse.png">
+                <span class="tooltiptext">MARBLEEE</span>
+                  <a href="projects/marble.html">
+                      <img src="files/marble/marble-ball.gif">
+                  </a>
+              </div>
+              <div class="item">
+                  <span class="tooltiptext">Artist Ball poster for RISD CSI</span>
+                  <a href="projects/artist-ball.html">
+                    <img src="files/outer-space/outer-space.jpg">
+                  </a>
               </div>
               <div class="unavailable item">
-                <span class="tooltiptext">Working on documentation!</span>
-                <video autoplay muted loop>
-                  <source src="files/airfoil/new_1.mp4" type="video/mp4">
-                </video>    
+                <span class="tooltiptext">In progress!</span>
+                <!-- <a href="projects/artist-ball.html"> -->
+                  <img src="files/admissions-stickers/animated.gif">
+                <!-- </a> -->
               </div>
+                <!--
+                <div class="item">
+                  <img src="files/metallic-1.png">
+                </div>
+                -->
               <div class="item">
-                <span class="tooltiptext">Web sound archive project</span>
-                <a href="projects/gathering-sounds.html">
-                  <video autoplay muted loop>
-                    <source src="files/gathering-sounds/gathering-sounds.mp4" type="video/mp4">
-                  </video>
-                </a>
+                  <a href="projects/stairs.html">
+                    <video autoplay muted loop>
+                      <source src="files/stairs-1.mp4" type="video/mp4">
+                    </video>     
+                  </a> 
               </div>
+                <!--
                 <div class="item">
-                  <span class="tooltiptext">MARBLEEE</span>
-                    <a href="projects/marble.html">
-                        <img src="files/marble/marble-ball.gif">
-                    </a>
-                </div>
-                <div class="item">
-                    <span class="tooltiptext">Artist Ball poster for RISD CSI</span>
-                    <a href="projects/artist-ball.html">
-                      <img src="files/outer-space/outer-space.jpg">
-                    </a>
-                </div>
-                <div class="unavailable item">
-                  <span class="tooltiptext">In progress!</span>
-                  <!-- <a href="projects/artist-ball.html"> -->
-                    <img src="files/admissions-stickers/animated.gif">
-                  <!-- </a> -->
-                </div>
-                  <!--
-                  <div class="item">
-                    <img src="files/metallic-1.png">
-                  </div>
-                  -->
-                <div class="item">
-                    <a href="projects/stairs.html">
-                      <video autoplay muted loop>
-                        <source src="files/stairs-1.mp4" type="video/mp4">
-                      </video>     
-                    </a> 
-                </div>
-                  <!--
-                  <div class="item">
-                    <img src="files/photos/P6090128.jpg">
-                    <p><i>(2023年6月) </i>Asakusa 浅草, Tokyo 東京</p>
-                    <hr>
-                  </div>
-                  -->
-                  <!--
-                  <div class="item">
-                    <video autoplay muted loop>
-                      <source src="files/bwxd/sampler.mp4" type="video/mp4">
-                    </video>    
-                  </div>
-                  -->
-                <!-- <div class="item">
-                    <img src="files/photos/me.JPG">
-                    <p><i>(2023年5月) </i>Sophomore review<hr></p>
-                </div> -->
-                <!-- <div class="unavailable item">
-                  <span class="tooltiptext">Poetry archive in progress</span>
-                    <img src="files/snowdrop-1.png">
-                </div> -->
-                  <!--
-                  <div class="item">
-                    <img src="files/strain.jpg">
-                  </div>
-                  -->
-                  <!--
-                  <div class="unavailable item">
-                    <video autoplay muted loop>
-                      <source src="files/vocal-extinct.mp4" type="video/mp4">
-                    </video>
-                  </div>
-                  -->
-                <div class="item">
-                  <span class="tooltiptext">Flowers growing in our garden</span>
-                  <a href="projects/decay.html">
-                    <img src="files/decay/riso-ani-2.gif">
-                  </a>
-                </div>
-                <div class="item">
-                  <span class="tooltiptext">My mother and I</span>
-                  <a href="projects/canopy.html">
-                    <img src="files/canopy/canopy-layer-dark.jpg">
-                  </a>
-                </div>
-                <div class="item">
-                  <span class="tooltiptext">Ghost bears and campfires</span>
-                  <a href="projects/hackatbrown.html">
-                    <img src="files/hackatbrown/bears-1.gif">
-                  </a>
-                </div>
-                <div class="unavailable item">
-                  <span class="tooltiptext">Making prints</span>
-                  <img src="files/demolition-1.jpg">
-                </div>
-                <div class="unavailable item" style="filter:brightness(1.1)">
-                    <video autoplay muted loop>
-                      <source src="files/long-distance/scroll.mp4" type="video/mp4">
-                    </video>    
-                </div>
-                <div class="unavailable item">
-                  <span class="tooltiptext">Excited to share soon</span>
-                  <video autoplay muted loop>
-                    <source src="files/post-digital-collapse/green.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <div class="unavailable item">
-                  <span class="tooltiptext">Not available yet</span>
-                    <!-- <a href="projects/marble.html"> -->
-                        <img src="files/manipulation/3.jpg">
-                    <!-- </a> -->
-                </div>
-                  <!--
-                  <div class="item">
-                    <img src="files/star-spin.gif">
-                  </div>
-                  -->
-                <div class="item">
-                  <span class="tooltiptext">Class of 2023 Yearbook</span>
-                  <a href="projects/yearbook23.html">
-                    <img src="files/yearbook/photo-hold.jpg">    
-                  </a>
-                </div>
-                  <!--
-                  <div class="unavailable item">
-                    <img src="files/swatch-ani.gif">
-                  </div>
-                  -->
-                <div class="item">
-                  <span class="tooltiptext">Mochi donuts are delicious</span>
-                  <a href="projects/pondejoy.html">
-                    <video autoplay muted loop>
-                      <source src="files/pondejoy/pondejoy-box.mp4" type="video/mp4">
-                    </video>    
-                  </a>
-                </div>
-                <div class="item">
-                  <span class="tooltiptext">hihihihihihihihi</span>
-                  <a href="projects/orientation23.html">
-                    <img src="files/orientation-23/whale-1.jpg">
-                  </a>
-                </div>
-                <div class="item">
-                  <span class="tooltiptext">First student-led workshop of our mentorship program</span>
-                  <img src="files/photos/workshop.jpg">
-                  <p><i>(2023年10月) </i>Intro to Motion Design Workshop @ RISD</p>
+                  <img src="files/photos/P6090128.jpg">
+                  <p><i>(2023年6月) </i>Asakusa 浅草, Tokyo 東京</p>
                   <hr>
                 </div>
-                <div class="unavailable item">
-                  <span class="tooltiptext">Scanning...</span>
-                  <img src="files/shooting-star.gif">
-                </div>
-                <div class="unavailable item">
-                  <span class="tooltiptext">Not available yet</span>
-                  <img src="files/document-1.jpg">
-                </div>
+                -->
+                <!--
                 <div class="item">
                   <video autoplay muted loop>
-                    <source src="files/photos/P7260050.mp4" type="video/mp4"> 
-                  </video>
-                  <p><i>(2023年7月) </i>Fishing trip (Left: Steven, Right: Kai)</p><hr>
-                </div>
-                <div class="unavailable item">
-                  <span class="tooltiptext">Documenting...</span>
-                  <video autoplay muted loop>
-                    <source src="files/conflict-1.mp4" type="video/mp4">
+                    <source src="files/bwxd/sampler.mp4" type="video/mp4">
                   </video>    
                 </div>
-            </div> <!--projects end-->
-        </div> <!--main end-->
-        <script>
+                -->
+              <!-- <div class="item">
+                  <img src="files/photos/me.JPG">
+                  <p><i>(2023年5月) </i>Sophomore review<hr></p>
+              </div> -->
+              <!-- <div class="unavailable item">
+                <span class="tooltiptext">Poetry archive in progress</span>
+                  <img src="files/snowdrop-1.png">
+              </div> -->
+                <!--
+                <div class="item">
+                  <img src="files/strain.jpg">
+                </div>
+                -->
+                <!--
+                <div class="unavailable item">
+                  <video autoplay muted loop>
+                    <source src="files/vocal-extinct.mp4" type="video/mp4">
+                  </video>
+                </div>
+                -->
+              <div class="item">
+                <span class="tooltiptext">Flowers growing in our garden</span>
+                <a href="projects/decay.html">
+                  <img src="files/decay/riso-ani-2.gif">
+                </a>
+              </div>
+              <div class="item">
+                <span class="tooltiptext">My mother and I</span>
+                <a href="projects/canopy.html">
+                  <img src="files/canopy/canopy-layer-dark.jpg">
+                </a>
+              </div>
+              <div class="item">
+                <span class="tooltiptext">Ghost bears and campfires</span>
+                <a href="projects/hackatbrown.html">
+                  <img src="files/hackatbrown/bears-1.gif">
+                </a>
+              </div>
+              <div class="unavailable item">
+                <span class="tooltiptext">Making prints</span>
+                <img src="files/demolition-1.jpg">
+              </div>
+              <div class="unavailable item" style="filter:brightness(1.1)">
+                  <video autoplay muted loop>
+                    <source src="files/long-distance/scroll.mp4" type="video/mp4">
+                  </video>    
+              </div>
+              <div class="unavailable item">
+                <span class="tooltiptext">Excited to share soon</span>
+                <video autoplay muted loop>
+                  <source src="files/post-digital-collapse/green.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="unavailable item">
+                <span class="tooltiptext">Not available yet</span>
+                  <!-- <a href="projects/marble.html"> -->
+                      <img src="files/manipulation/3.jpg">
+                  <!-- </a> -->
+              </div>
+                <!--
+                <div class="item">
+                  <img src="files/star-spin.gif">
+                </div>
+                -->
+              <div class="item">
+                <span class="tooltiptext">Class of 2023 Yearbook</span>
+                <a href="projects/yearbook23.html">
+                  <img src="files/yearbook/photo-hold.jpg">    
+                </a>
+              </div>
+                <!--
+                <div class="unavailable item">
+                  <img src="files/swatch-ani.gif">
+                </div>
+                -->
+              <div class="item">
+                <span class="tooltiptext">Mochi donuts are delicious</span>
+                <a href="projects/pondejoy.html">
+                  <video autoplay muted loop>
+                    <source src="files/pondejoy/pondejoy-box.mp4" type="video/mp4">
+                  </video>    
+                </a>
+              </div>
+              <div class="item">
+                <span class="tooltiptext">hihihihihihihihi</span>
+                <a href="projects/orientation23.html">
+                  <img src="files/orientation-23/whale-1.jpg">
+                </a>
+              </div>
+              <div class="item">
+                <span class="tooltiptext">First student-led workshop of our mentorship program</span>
+                <img src="files/photos/workshop.jpg">
+                <p><i>(2023年10月) </i>Intro to Motion Design Workshop @ RISD</p>
+                <hr>
+              </div>
+              <div class="unavailable item">
+                <span class="tooltiptext">Scanning...</span>
+                <img src="files/shooting-star.gif">
+              </div>
+              <div class="unavailable item">
+                <span class="tooltiptext">Not available yet</span>
+                <img src="files/document-1.jpg">
+              </div>
+              <div class="item">
+                <video autoplay muted loop>
+                  <source src="files/photos/P7260050.mp4" type="video/mp4"> 
+                </video>
+                <p><i>(2023年7月) </i>Fishing trip (Left: Steven, Right: Kai)</p><hr>
+              </div>
+              <div class="unavailable item">
+                <span class="tooltiptext">Documenting...</span>
+                <video autoplay muted loop>
+                  <source src="files/conflict-1.mp4" type="video/mp4">
+                </video>    
+              </div>
+          </div> <!--projects end-->
+      </div> <!--main end-->
+      <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const dragElements = document.querySelectorAll('.drag');
                 function animateDragElement(element) {
