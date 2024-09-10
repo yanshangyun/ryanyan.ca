@@ -194,6 +194,17 @@ function toggleMode() {
         root.style.setProperty('--foreground-color', 'white');
         root.style.setProperty('--main-color', 'rgb(3, 194, 252)');
     }
-  }
-  
-  
+}
+
+//copy email
+
+function copyEmail(){
+    const email = document.getElementById("email");
+
+    navigator.clipboard.writeText("hello@ryanyan.ca");
+    email.innerHTML = "Copied!";
+
+    setTimeout(() => {
+        email.innerHTML = "Email";
+    }, "1000");
+}
