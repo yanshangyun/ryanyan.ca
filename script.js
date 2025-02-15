@@ -1,5 +1,4 @@
 //name change
-
 function changeName(){
     var x = document.getElementById("name-change");
     if(x.innerHTML == "SHANGYUN"){
@@ -11,7 +10,6 @@ function changeName(){
 }
 
 //bunny face change
-
 function changeFace(){
     var x = document.getElementById("face-change");
     if(x.innerHTML == "• - •"){
@@ -38,7 +36,6 @@ function changeFace(){
 }
 
 //tooltip mouse follow
-
 document.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll('.item').forEach(function(itemElem){
         itemElem.addEventListener('mousemove', function(e){
@@ -110,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function(){
 // }
 
 //hire me
-
 function hireMe(){
     var x = document.getElementById("hire");
     if(x.innerHTML == "???"){
@@ -129,15 +125,13 @@ function resetHireMe(){
 }
 
 //user input text
-
 function clearPlaceholder(element) {
     if (element.textContent.trim() === 'Click to type'){
-      element.textContent = '';
+        element.textContent = '';
     }
 }
 
 //show extra
-
 function showExtra(){
     var x = document.getElementById('extra');
     var y = document.getElementById('showPeople');
@@ -152,13 +146,12 @@ function showExtra(){
 }
 
 //resolution
-
 function updateResolution() {
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
-  
+
     const resolutionElement = document.getElementById('resolution');
-  
+
     resolutionElement.textContent = windowWidth + 'x' + windowHeight;
 }
 
@@ -166,7 +159,6 @@ window.addEventListener('load', updateResolution);
 window.addEventListener('resize', updateResolution);
 
 //dark light
-
 function toggleMode() {
 
     var x = document.getElementById("toggleDark");
@@ -187,17 +179,18 @@ function toggleMode() {
         root.style.setProperty('--background-color', 'white');
         root.style.setProperty('--foreground-color', 'black');
         root.style.setProperty('--main-color', 'rgb(14, 92, 195)');
+        root.style.setProperty('--bar', 'rgb(234, 234, 234)');
         root.setAttribute('data-mode', 'dark');
     }
     else {
         root.style.setProperty('--background-color', 'black');
         root.style.setProperty('--foreground-color', 'white');
+        root.style.setProperty('--bar', 'rgb(56, 56, 56');
         root.style.setProperty('--main-color', 'rgb(3, 194, 252)');
     }
 }
 
 //copy email
-
 function copyEmail(){
     const email = document.getElementById("email");
 
@@ -208,3 +201,159 @@ function copyEmail(){
         email.innerHTML = "Email";
     }, "1000");
 }
+
+//duplicate marquee content
+document.addEventListener("DOMContentLoaded", function() {
+    const marquee = document.querySelector('.marquee-content');
+    if (marquee) {
+        marquee.innerHTML += marquee.innerHTML; // Duplicate the content
+    }
+});
+
+//page transition
+document.addEventListener("DOMContentLoaded", () => {
+    const overlay = document.getElementById("transition-overlay");
+
+    setTimeout(() => {
+        overlay.classList.add("hidden");
+    }, 300);
+
+    document.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", event => {
+            if (link.href.startsWith(window.location.origin)) {
+                event.preventDefault(); //prevent immediate navigation
+
+                overlay.classList.remove("hidden");
+                overlay.classList.add("active");
+
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 500);
+            }
+        });
+    });
+});
+
+//particles
+const characters = [
+    '✽', '✾', '✿', '❀', '❁', '❃', '❊', '❋', '✣', '✤', '■', '□', '▪', '▫', '◼', '◻', '●', '○', '◉', '◌', '◎', '◍', '◕', '◖', '◗', '◆', '◇', '◈', '◊', '⬟', '⬠', '⬢', '⬣', '⬤', '⬥', '★', '☆', '✦', '✧', '✩', '✪', '✫', '✬', '✭', '✮', '✯', '☼', '☽', '☾', '✶', '✷', '✹', '✺', '✻', '❂', '❖', '⌘', '☙', '⚘', '❧', '❦', '⚜', '✵', '✴', '✳', '✵', '❂', '❖', '❊', '⭑', '⭒', '⭓', '⬮', '⬯', '◐', '◑', '◒', '◓', '♠', '♣', '♥', '♦', '❥', '❣', '✿', '✽', '✾', '❋', '⚝', '⚞', '⚟', '⧫', '⬠', '⬢', '⬥', '❉', '❆', '❄', '⛆', '☁', '☂', '☃', '⚘', '⯀', '⌖', '⌑', '⌕', '✶', '✷', '✸', '✹', '✺', '✻', '✼', '❈', '❇', '❋', '❊', '❅', '❆', '❄'
+];
+let lastParticleTime = 0;
+const particleInterval = 30;
+
+const colors = ['rgb(17, 179, 17)','rgb(69, 189, 208)','rgb(85, 148, 255)','rgb(168, 137, 255)','red','orange','rgb(255, 225, 0)','rgb(197, 246, 83)'];
+
+let colorIndex = 0;
+
+document.addEventListener('mousemove', (e) => {
+    const currentTime = Date.now();
+
+    if(currentTime - lastParticleTime >= particleInterval){
+        //new particle
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        document.body.appendChild(particle);
+
+        //follow cursor location
+        particle.style.left = `${e.pageX}px`;
+        particle.style.top = `${e.pageY}px`;
+
+        //randomize text content
+        particle.textContent = characters[Math.floor(Math.random() * characters.length)]; //choose random
+        particle.style.fontSize = `${Math.random() * 10 + 5}px`;
+
+        //color in order
+        const particleColor = colors[colorIndex];
+        particle.style.color = particleColor;
+        particle.style.textShadow = `0 0 2px ${particleColor}`;
+
+        //increment color index
+        colorIndex = (colorIndex + 1) % colors.length;
+
+        //rotate
+        particle.style.setProperty('--rotate', `${Math.random() * 360 - 180}deg`);
+
+        //delete particle
+        setTimeout(() => {
+            particle.remove();
+            particle.style.textShadow = 'none';
+        }, 1500); // Match the animation duration in CSS
+
+        lastParticleTime = currentTime;
+    }
+});
+
+//text appear
+let colorIndex1 = 0;
+
+document.addEventListener('DOMContentLoaded', () => {
+    const startDelay = 700; //delay
+
+    document.querySelectorAll('.project-desc').forEach(element => {
+        let totalChars = 0;
+        function countCharacters(node) {
+            node.childNodes.forEach(child => {
+                if (child.nodeType === Node.TEXT_NODE) {
+                    totalChars += child.textContent.length;
+                }
+                else {
+                    countCharacters(child);
+                }
+            });
+        }
+    
+        countCharacters(element);
+
+        if (totalChars === 0) return;
+
+        const delayPerChar = 0.2;
+        let charIndex = 0; //global counter for this element
+
+        function wrapTextNodes(node) {
+            const children = Array.from(node.childNodes);
+            children.forEach(child => {
+                if (child.nodeType === Node.TEXT_NODE) {
+                    const text = child.textContent;
+                    const fragment = document.createDocumentFragment();
+
+                for (let i = 0; i < text.length; i++) {
+                    const span = document.createElement('span');
+                    span.textContent = text[i];
+
+                    span.style.opacity = '0';
+                    span.style.transition = 'opacity 0.5s cubic-bezier(.33,0,.2,1), color 1s cubic-bezier(.33,0,.2,1)';
+
+                    span.style.transitionDelay = `${charIndex * delayPerChar}ms`;
+
+                    const revealColor = colors[colorIndex1];
+                    span.style.color = revealColor;
+                    colorIndex1 = (colorIndex1 + 1) % colors.length;
+
+                    setTimeout(() => {
+                        if (span.closest('a')) {
+                            span.style.color = '';
+                        } else {
+                            span.style.color = 'black';
+                        }
+                    }, startDelay + charIndex * delayPerChar);
+
+                    fragment.appendChild(span);
+                    charIndex++;
+                }
+
+                child.parentNode.replaceChild(fragment, child);
+                }
+                else if (child.nodeType === Node.ELEMENT_NODE) {
+                    wrapTextNodes(child);   //recursively process element nodes.
+                }
+            });
+        }
+        wrapTextNodes(element);
+
+        setTimeout(() => {
+            element.querySelectorAll('span').forEach(span => {
+                span.style.opacity = '1';
+            });
+        }, startDelay);
+    });
+});

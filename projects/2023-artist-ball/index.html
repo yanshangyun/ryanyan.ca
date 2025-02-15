@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <link href="/style.css" rel="stylesheet" type="text/css"/>
+        <link href="/project-style.css" rel="stylesheet" type="text/css"/>
+        <script src="/script.js"></script>
+        <title>Open Studios 2024</title>
+    </head>
+    <body>
+        <div id="transition-overlay"></div>
+        <!--nav-->
+        <div class="nav">
+            <div class="bar">
+                <div class="marquee">
+                    <span class="marquee-content"></span>
+                </div>
+            </div>
+            <!--title-->
+            <div id="header-container"></div>
+            <script>
+                fetch('/header.html')
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById('header-container').innerHTML = html;
+                    });
+            </script>
+        </div> <!--nav end-->
+        <!--main-->
+        <div class="main">
+            <div class="two-split">
+                <!--description-->
+                <div class="project-desc-wrapper">
+                    <div class="project-desc">
+                        <p><a href="../../index.html">&#8592 Back <i>(home)</i></a></p>
+                        <br>
+                        <p id="project-title"><b>ARTIST BALL 2023: OUTER SPACE</b></p> <!--title-->
+                        <p id="project-info"> <!--info-->
+                            in → October 2023
+                            <br>
+                            with → Christine Wang, Kayla Feng
+                            <br>
+                            for → RISD CSI
+                            <br>
+                            deliverable → poster
+                        </p>
+                        <hr>
+                        <p> <!--project description-->
+                            Designed the poster for RISD’s annual Artist Ball, themed around outer space. We explored stars and supernovas, balancing organic, fluid forms with bold, sharp type.
+                            <br><br>
+                            Explorations began in Illustrator, later moving into Photoshop using the curve and gradient map tool to create new imagery out of the same base forms.
+                        </p>
+                    </div> <!--project-desc end-->
+                </div> <!--project-desc-wrapper end-->
+                <!--images-->
+                <div class="project-images">
+                    <img src="outer-space.jpg">
+                    <img src="star-spin.gif">
+                    <div style="display:grid; grid-template-columns:1fr 1fr; justify-content:center; align-items:center; gap:50px; margin:50px 0 50px 0; padding:0 50px 0 50px">
+                        <img src="outer-space_star.gif">
+                        <img src="process.gif">
+                    </div>
+                    <img src="metallic-star.png">
+                    <img src="poster_star.jpg">
+                </div> <!--project-images end-->
+            </div>
+        </div> <!--main end-->
+        <script>
+            const projectTitle = document.getElementById("project-title").innerText.trim();
+            const projectInfoElement = document.getElementById("project-info");
+            
+            const projectInfoLines = projectInfoElement.innerHTML.split('<br>').map(line => line.trim());
+        
+            const marqueeContentSpans = document.querySelectorAll(".marquee-content");
+        
+            const createMarqueeSpan = (text) => `<span class="marquee-item">${text}</span>`;
+        
+            const formattedText = [
+                createMarqueeSpan(projectTitle),
+                ...projectInfoLines.map(line => createMarqueeSpan(line))
+            ].join('');
+        
+            marqueeContentSpans.forEach(span => {
+                span.innerHTML = formattedText;
+            });
+        </script>
+    </body>
+</html>

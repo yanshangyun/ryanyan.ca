@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+    <head>
+        <link href="/style.css" rel="stylesheet" type="text/css"/>
+        <link href="/project-style.css" rel="stylesheet" type="text/css"/>
+        <script src="/script.js"></script>
+        <title>Yearbook 2023</title>
+    </head>
+    <body>
+        <div id="transition-overlay"></div>
+        <!--nav-->
+        <div class="nav">
+            <div class="bar">
+                <div class="marquee">
+                    <span class="marquee-content"></span>
+                </div>
+            </div>
+            <!--title-->
+            <div id="header-container"></div>
+            <script>
+                fetch('/header.html')
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById('header-container').innerHTML = html;
+                    });
+            </script>
+        </div> <!--nav end-->
+        <!--main-->
+        <div class="main">
+            <div class="two-split">
+                <!--description-->
+                <div class="project-desc-wrapper">
+                    <div class="project-desc">
+                        <p><a href="../../index.html">&#8592 Back <i>(home)</i></a></p>
+                        <br>
+                        <p id="project-title"><b>RISD YEARBOOK 2023</b></p> <!--title-->
+                        <p id="project-info"> <!--info-->
+                            in → January – June 2023
+                            <br>
+                            for → Rhode Island School of Design
+                            <br>
+                            with → RISD Design Guild <i><a id="showPeople" onclick="showExtra()">(+)</a></i>
+                            <i id="extra">
+                                Anmol Govinda Rao, Christine Wang, Ella Lawless, Emma Caamaño, Henry Spuria, Jacob Lee, Joyce Ho, Kayla Feng, Matthew Cuschieri, Maxton O'Connor, Mizuki Hanada, Ollantay Avila, Ryan Yan, Sharlene Deng, Truman Lesak, Yasemin Sarihan    
+                            </i>
+                        </p>
+                        <hr>
+                        <p> <!--project description-->
+                            Ships have sailed, planes have departed!
+                            </p>
+                            <p>
+                            Together with <a>RISD CSI</a>, Design Guild presents the 2023 RISD Yearbook with three books in one: [NO.1] faculty Interviews, [NO.2] student photos, and [NO.3] campus documentation. Pages decorated with custom-made stamps, designed in the fashion of travel documents, lay out people, memories, and words to record each student’s own personal history at RISD and their departure to future destinations.                      
+                        </p>
+                    </div> <!--project-desc end-->
+                </div> <!--project-desc-wrapper end-->
+                <!--images-->
+                <div class="project-images">
+                    <div class="scroll-gradient"></div>
+                    <img src="photo-hold.jpg">
+                    <img src="scan-photo-spread.jpg">
+                    <img src="first-spread.jpg">
+                    <img src="scan-all-books.jpg">
+                    <img src="type-open.jpg">
+                    <img src="open.jpg">
+                    <img src="flip.jpg">
+                </div> <!--project-images end-->
+            </div>
+        </div> <!--main end-->
+        <script>
+            const projectTitle = document.getElementById("project-title").innerText;
+            const projectInfo = document.getElementById("project-info").innerText;
+
+            const marqueeContentSpans = document.querySelectorAll(".marquee-content");
+
+            marqueeContentSpans.forEach(span => {
+                const formattedText = `&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${projectTitle}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${projectInfo}`.replace(/\n/g, "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;");
+
+                span.innerHTML = formattedText;
+            });
+        </script>
+    </body>

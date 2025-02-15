@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <link href="/style.css" rel="stylesheet" type="text/css"/>
+        <link href="/project-style.css" rel="stylesheet" type="text/css"/>
+        <script src="/script.js"></script>
+        <title>RISD Commencement 2024</title>
+    </head>
+    <body>
+        <div id="transition-overlay"></div>
+        <!--nav-->
+        <div class="nav">
+            <div class="bar">
+                <div class="marquee">
+                    <span class="marquee-content"></span>
+                </div>
+            </div>
+            <!--title-->
+            <div id="header-container"></div>
+            <script>
+                fetch('/header.html')
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById('header-container').innerHTML = html;
+                    });
+            </script>
+        </div> <!--nav end-->
+        <!--main-->
+        <div class="main">
+            <div class="two-split">
+                <!--description-->
+                <div class="project-desc-wrapper">
+                    <div class="project-desc">
+                        <p><a href="../../index.html">&#8592 Back <i>(home)</i></a></p>
+                        <br>
+                        <p id="project-title"><b>CONFLICT DATA VIS</b></p> <!--title-->
+                        <p id="project-info"> <!--info-->
+                            in → 2023
+                            <br>
+                            using → Cavalry App
+                        </p>
+                        <hr>
+                        <p> <!--project description-->
+                            Created in Cavalry, this motion piece uses spreadsheet data to visualize the metaphor of turning gears—conflict, movement, and interdependence. Motion dynamically updates via a linked Google Sheet, adjusting size, tooth count, and position along a time axis.
+                            <br><br>
+                            Next steps: transforming this into a journaling process.
+                        </p>
+                    </div> <!--project-desc end-->
+                </div> <!--project-desc-wrapper end-->
+                <!--images-->
+                <div class="project-images">
+                    <video autoplay muted loop style="transform:translateY(-40px)">
+                        <source src="sheet.mp4" type="video/mp4">
+                    </video>
+                    <video autoplay muted loop>
+                        <source src="gears.mp4" type="video/mp4">
+                    </video>
+                </div> <!--project-images end-->
+            </div>
+        </div> <!--main end-->
+        <script>
+            const projectTitle = document.getElementById("project-title").innerText.trim();
+            const projectInfoElement = document.getElementById("project-info");
+            
+            const projectInfoLines = projectInfoElement.innerHTML.split('<br>').map(line => line.trim());
+        
+            const marqueeContentSpans = document.querySelectorAll(".marquee-content");
+        
+            const createMarqueeSpan = (text) => `<span class="marquee-item">${text}</span>`;
+        
+            const formattedText = [
+                createMarqueeSpan(projectTitle),
+                ...projectInfoLines.map(line => createMarqueeSpan(line))
+            ].join('');
+        
+            marqueeContentSpans.forEach(span => {
+                span.innerHTML = formattedText;
+            });
+        </script>
+    </body>
+</html>

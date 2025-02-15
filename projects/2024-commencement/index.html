@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <link href="/style.css" rel="stylesheet" type="text/css"/>
+        <link href="/project-style.css" rel="stylesheet" type="text/css"/>
+        <script src="/script.js"></script>
+        <title>RISD Commencement 2024</title>
+    </head>
+    <body>
+        <div id="transition-overlay"></div>
+        <!--nav-->
+        <div class="nav">
+            <div class="bar">
+                <div class="marquee">
+                    <span class="marquee-content"></span>
+                </div>
+            </div>
+            <!--title-->
+            <div id="header-container"></div>
+            <script>
+                fetch('/header.html')
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById('header-container').innerHTML = html;
+                    });
+            </script>
+        </div> <!--nav end-->
+        <!--main-->
+        <div class="main">
+            <div class="two-split">
+                <!--description-->
+                <div class="project-desc-wrapper">
+                    <div class="project-desc">
+                        <p><a href="../../index.html">&#8592 Back <i>(home)</i></a></p>
+                        <br>
+                        <p id="project-title"><b>COMMENCEMENT 2024</b></p> <!--title-->
+                        <p id="project-info"> <!--info-->
+                            in → 2024
+                            <br>
+                            with → Ryan Brandon Hsiao, Peter Weicheng Xu
+                            <br>
+                            for → Rhode Island School of Design
+                            <br>
+                            deliverables → identity, poster, motion
+                        </p>
+                        <hr>
+                        <p> <!--project description-->
+                            Inspired by sketchbooks and process work, the visual identity for RISD’s 2024 Commencement embraces sparks of inspiration bursting forth on every page—like flowers, fireworks, and stars. Vibrant pinks and yellows complement RISD’s iconic blue, while playful hand lettering pairs with the bold, robust serif to balance spontaneity with structure.
+                            <br><br>
+                            Our motion language captures the energy of transition and celebration through a blend of stop motion and keyframe animation. Hand-drawn textures and organic movement highlight the process of making, resulting in a vibrant and dynamic visual system that enhances RISD’s established identity.
+                        </p>
+                    </div> <!--project-desc end-->
+                </div> <!--project-desc-wrapper end-->
+                <!--images-->
+                <div class="project-images">
+                    <img src="poster.jpg">
+                    <div style="display:flex; flex-direction:column; width:50%; padding:30%">
+                        <video autoplay muted loop>
+                            <source src="jumbotron-insitu.MOV" type="video/mp4">
+                        </video>
+                        <img src="brochure.jpg">
+                    </div>
+                    <div style="width:100%; display:grid; grid-template-columns:1fr 1fr; align-items:center; justify-content:center">
+                        <video autoplay muted loop>
+                            <source src="unused-bouquet.mp4" type="video/mp4">
+                        </video>
+                        <video autoplay muted loop>
+                            <source src="square.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <video autoplay muted loop style="width:60%; padding:20%">
+                        <source src="burst-draft.mov" type="video/mp4">
+                    </video>
+                    <div style="width:100%; display:grid; grid-template-columns:2fr 1fr; align-items:center; justify-content:center; margin-bottom:100px">
+                        <video autoplay muted loop>
+                            <source src="jumbotron-draft.mov" type="video/mp4">
+                        </video>
+                        <video autoplay muted loop>
+                            <source src="24-draft.mov" type="video/mp4">
+                        </video>
+                    </div>
+                    <video autoplay muted loop>
+                        <source src="jumbotron-trim.mp4" type="video/mp4">
+                    </video>
+                    <!-- <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; padding:0 20px 0 20px">
+                        <img src="draft-seal.gif">
+                        <img src="draft-scribbles.gif">
+                    </div>
+                    <div style="background-color:black; height:0.5px; width:100%"></div>
+                    <p>Initial motion sketches</p> -->
+                </div> <!--project-images end-->
+            </div>
+        </div> <!--main end-->
+        <script>
+            const projectTitle = document.getElementById("project-title").innerText.trim();
+            const projectInfoElement = document.getElementById("project-info");
+            
+            const projectInfoLines = projectInfoElement.innerHTML.split('<br>').map(line => line.trim());
+        
+            const marqueeContentSpans = document.querySelectorAll(".marquee-content");
+        
+            const createMarqueeSpan = (text) => `<span class="marquee-item">${text}</span>`;
+        
+            const formattedText = [
+                createMarqueeSpan(projectTitle),
+                ...projectInfoLines.map(line => createMarqueeSpan(line))
+            ].join('');
+        
+            marqueeContentSpans.forEach(span => {
+                span.innerHTML = formattedText;
+            });
+        </script>
+    </body>
+</html>
