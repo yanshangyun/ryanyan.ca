@@ -216,6 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
         overlay.classList.add("hidden");
+        overlay.classList.remove("active");
     }, 300);
 
     //internal links
@@ -223,8 +224,10 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", event => {
             if (link.href.startsWith(window.location.origin)) {
                 event.preventDefault();
+
                 overlay.classList.remove("hidden");
                 overlay.classList.add("active");
+                
                 setTimeout(() => {
                     window.location.href = link.href;
                 }, 500);
