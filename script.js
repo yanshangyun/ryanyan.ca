@@ -218,19 +218,30 @@ document.addEventListener("DOMContentLoaded", () => {
         overlay.classList.add("hidden");
     }, 300);
 
+    //internal links
     document.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", event => {
             if (link.href.startsWith(window.location.origin)) {
-                event.preventDefault(); //prevent immediate navigation
-
+                event.preventDefault();
                 overlay.classList.remove("hidden");
                 overlay.classList.add("active");
-
                 setTimeout(() => {
                     window.location.href = link.href;
                 }, 500);
             }
         });
+    });
+
+    //back-forward
+    history.pushState({page: 'current'}, '');
+
+    window.addEventListener("popstate", (event) => {
+        overlay.classList.remove("hidden");
+        overlay.classList.add("active");
+        
+        setTimeout(() => {
+            history.back();
+        }, 500);
     });
 });
 
