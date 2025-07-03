@@ -364,6 +364,18 @@ hr{
         display:flex;
     } */
 
+    body{
+        font-size:16px;
+    }
+
+    p{
+        line-height:18px;
+    }
+
+    .content-main{
+        columns:2 200px;
+    }
+
     .column{
         width:100%;
     }
@@ -398,5 +410,9 @@ hr{
 
     .two-split{
         flex-direction:column;
+    }
+
+    #transition-overlay{
+        display:none;
     }
 }
