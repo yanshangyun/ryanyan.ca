@@ -10,7 +10,7 @@ html{
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     font-weight:300;
     font-size:12px;
     margin:0 auto;
@@ -106,8 +106,6 @@ a:hover{
     background-image:linear-gradient(to right,rgb(17, 179, 17),rgb(85, 148, 255),red,orange,rgb(255, 225, 0));
     color:var(--foreground-color);
     height:30px;
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 }
 
 .marquee{
@@ -139,7 +137,7 @@ a:hover{
 }
 
 .marquee-item{
-    margin-right:100px;
+    margin-left:100px;
 }
 
 .tooltiptext{
@@ -238,6 +236,10 @@ hr{
     align-items:center;
     justify-content:center;
     overflow-x:hidden;
+}
+
+#extra{
+    padding-left:20px;
 }
 
 /* text drag */
@@ -358,9 +360,9 @@ hr{
 }
 
 @media (orientation:portrait){
-    #mobile-overlay{
+    /* #mobile-overlay{
         display:flex;
-    }
+    } */
 
     .column{
         width:100%;
@@ -384,5 +386,17 @@ hr{
 
     #mood{
         display:none;
+    }
+
+    #header-container{
+    margin-top:10px;
+    }
+
+    .tooltiptext{
+        display:none;
+    }
+
+    .two-split{
+        flex-direction:column;
     }
 }

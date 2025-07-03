@@ -28,3 +28,19 @@
 #extra{
     display:none;
 }
+
+@media (orientation:portrait){
+    .project-desc-wrapper{
+        width:calc(100vw - 40px);
+    }
+
+    .project-desc{
+        position:relative;
+        max-width:100%;
+        width:100%;
+    }
+
+    .project-images{
+        width:100%;
+    }
+}

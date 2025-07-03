@@ -131,21 +131,23 @@ function clearPlaceholder(element) {
     }
 }
 
-//show extra
+//==SHOW EXTRA==
 function showExtra(){
-    var x = document.getElementById('extra');
-    var y = document.getElementById('showPeople');
-    if(x.style.display == 'none'){
-        x.style.display = 'block';
-        y.innerHTML = "(-)";
+    var extra = document.getElementById('extra');
+    var peopleList = document.getElementById('showPeople');
+    
+    if(extra.style.display == 'none' || extra.style.display == ''){
+        extra.style.display = 'block';
+        peopleList.innerHTML = "(-)";
     }
     else{
-        x.style.display = "none";
-        y.innerHTML = "(+)";
+        extra.style.display = "none";
+        peopleList.innerHTML = "(+)";
     }
 }
+//====
 
-//resolution
+//==READ RESOLUTION==
 function updateResolution() {
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
@@ -154,11 +156,12 @@ function updateResolution() {
 
     resolutionElement.textContent = windowWidth + 'x' + windowHeight;
 }
+//====
 
 window.addEventListener('load', updateResolution);
 window.addEventListener('resize', updateResolution);
 
-//dark light
+//==DARK MODE==
 function toggleMode() {
 
     var x = document.getElementById("toggleDark");
@@ -189,8 +192,9 @@ function toggleMode() {
         root.style.setProperty('--main-color', 'rgb(3, 194, 252)');
     }
 }
+//====
 
-//copy email
+//==COPY EMAIL TO CLIPBOARD==
 function copyEmail(){
     const email = document.getElementById("email");
 
@@ -201,16 +205,18 @@ function copyEmail(){
         email.innerHTML = "Email";
     }, "1000");
 }
+//====
 
-//duplicate marquee content
+//==DUPLICATE MARQUEE==
 document.addEventListener("DOMContentLoaded", function() {
     const marquee = document.querySelector('.marquee-content');
     if (marquee) {
-        marquee.innerHTML += marquee.innerHTML; // Duplicate the content
+        marquee.innerHTML += marquee.innerHTML; //duplicate the content
     }
 });
+//====
 
-//page transition
+//==PAGE TRANSITION==
 document.addEventListener("DOMContentLoaded", () => {
     const overlay = document.getElementById("transition-overlay");
 
@@ -247,8 +253,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 500);
     });
 });
+//====
 
-//particles
+//==PARTICLES==
 const characters = [
     '✽', '✾', '✿', '❀', '❁', '❃', '❊', '❋', '✣', '✤', '■', '□', '▪', '▫', '◼', '◻', '●', '○', '◉', '◌', '◎', '◍', '◕', '◖', '◗', '◆', '◇', '◈', '◊', '⬟', '⬠', '⬢', '⬣', '⬤', '⬥', '★', '☆', '✦', '✧', '✩', '✪', '✫', '✬', '✭', '✮', '✯', '☼', '☽', '☾', '✶', '✷', '✹', '✺', '✻', '❂', '❖', '⌘', '☙', '⚘', '❧', '❦', '⚜', '✵', '✴', '✳', '✵', '❂', '❖', '❊', '⭑', '⭒', '⭓', '⬮', '⬯', '◐', '◑', '◒', '◓', '♠', '♣', '♥', '♦', '❥', '❣', '✿', '✽', '✾', '❋', '⚝', '⚞', '⚟', '⧫', '⬠', '⬢', '⬥', '❉', '❆', '❄', '⛆', '☁', '☂', '☃', '⚘', '⯀', '⌖', '⌑', '⌕', '✶', '✷', '✸', '✹', '✺', '✻', '✼', '❈', '❇', '❋', '❊', '❅', '❆', '❄'
 ];
@@ -256,48 +263,50 @@ let lastParticleTime = 0;
 const particleInterval = 30;
 
 const colors = ['rgb(17, 179, 17)','rgb(69, 189, 208)','rgb(85, 148, 255)','rgb(168, 137, 255)','red','orange','rgb(255, 225, 0)','rgb(197, 246, 83)'];
+// const colors = ['rgb(220, 220, 225)','rgb(225, 220, 220)','rgb(220, 225, 220)','rgb(222, 222, 222)','rgb(225, 225, 220)','rgb(220, 225, 225)','rgb(223, 220, 225)','rgb(228, 228, 228)'];
 
 let colorIndex = 0;
 
-document.addEventListener('mousemove', (e) => {
-    const currentTime = Date.now();
+// document.addEventListener('mousemove', (e) => {
+//     const currentTime = Date.now();
 
-    if(currentTime - lastParticleTime >= particleInterval){
-        //new particle
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        document.body.appendChild(particle);
+//     if(currentTime - lastParticleTime >= particleInterval){
+//         //new particle
+//         const particle = document.createElement('div');
+//         particle.classList.add('particle');
+//         document.body.appendChild(particle);
 
-        //follow cursor location
-        particle.style.left = `${e.pageX}px`;
-        particle.style.top = `${e.pageY}px`;
+//         //follow cursor location
+//         particle.style.left = `${e.pageX}px`;
+//         particle.style.top = `${e.pageY}px`;
 
-        //randomize text content
-        particle.textContent = characters[Math.floor(Math.random() * characters.length)]; //choose random
-        particle.style.fontSize = `${Math.random() * 10 + 5}px`;
+//         //randomize text content
+//         particle.textContent = characters[Math.floor(Math.random() * characters.length)]; //choose random
+//         particle.style.fontSize = `${Math.random() * 10 + 5}px`;
 
-        //color in order
-        const particleColor = colors[colorIndex];
-        particle.style.color = particleColor;
-        particle.style.textShadow = `0 0 2px ${particleColor}`;
+//         //color in order
+//         const particleColor = colors[colorIndex];
+//         particle.style.color = particleColor;
+//         particle.style.textShadow = `0 0 2px ${particleColor}`;
 
-        //increment color index
-        colorIndex = (colorIndex + 1) % colors.length;
+//         //increment color index
+//         colorIndex = (colorIndex + 1) % colors.length;
 
-        //rotate
-        particle.style.setProperty('--rotate', `${Math.random() * 360 - 180}deg`);
+//         //rotate
+//         particle.style.setProperty('--rotate', `${Math.random() * 360 - 180}deg`);
 
-        //delete particle
-        setTimeout(() => {
-            particle.remove();
-            particle.style.textShadow = 'none';
-        }, 1500); // Match the animation duration in CSS
+//         //delete particle
+//         setTimeout(() => {
+//             particle.remove();
+//             particle.style.textShadow = 'none';
+//         }, 1500); // Match the animation duration in CSS
 
-        lastParticleTime = currentTime;
-    }
-});
+//         lastParticleTime = currentTime;
+//     }
+// });
+//====
 
-//text appear
+//==TEXT APPEAR ANIMATION==
 let colorIndex1 = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -371,3 +380,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }, startDelay);
     });
 });
+//====

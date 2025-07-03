@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+    <link href="/style.css" rel="stylesheet" type="text/css"/>
+    <link href="/project-style.css" rel="stylesheet" type="text/css"/>
+    <script src="/script.js"></script>
+    <title>Yearbook 2024</title>
+</head>
+<body>
+    <div id="transition-overlay"></div>
+    <!--nav-->
+    <div class="nav">
+        <div class="bar">
+            <div class="marquee">
+                <span class="marquee-content"></span>
+            </div>
+        </div>
+        <!--title-->
+        <div id="header-container"></div>
+        <script>
+            fetch('/header.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('header-container').innerHTML = html;
+                });
+        </script>
+    </div> <!--nav end-->
+    <!--main-->
+    <div class="main">
+        <div class="two-split">
+            <!--description-->
+            <div class="project-desc-wrapper">
+                <div class="project-desc">
+                    <p><a href="../../index.html">&#8592 Back <i>(home)</i></a></p>
+                    <br>
+                    <p id="project-title"><b>RISD YEARBOOK 2025</b></p> <!--title-->
+                    <p id="project-info"> <!--info-->
+                        in →&#9;2025
+                        <br>
+                        for →&#9;Rhode Island School of Design
+                        <br>
+                        with → RISD Design Guild <i><a id="showPeople" onclick="showExtra()">(+)</a></i>
+                        <span id="extra">
+                            Andrew Haoyuan Liu,
+                            Annabel Gillespie,
+                            Ash Wenqing Ma,
+                            Hannah Hye-eun Jeong,
+                            Hyunmin Kim,
+                            Jyot Kaur Thind,
+                            Kay Gahyun Kim,
+                            Li Huang,
+                            Maggie Meitong Xian,
+                            Minah Erin Kim,
+                            Nadine Macapagal,
+                            Nicole Jiawei Sun,
+                            Punch Kulphisanrat,
+                            Ryan Shangyun Yan
+                        </span>
+                        <br>
+                        size → 6.75 × 9
+                        <br>
+                        printing → Meridian
+                    </p>
+                    <hr>
+                    <p> <!--project description-->
+                        The 2025 yearbook is a celebration of what we carry with us and the moments we hold close. Each student page is personalized—decorated and curated like a proud, well-loved fridge door. 
+                        <br><br>
+                        We dedicate this yearbook as a keepsake for the graduating class of 2025. What’s yours? 💭✨
+                    </p>
+                </div> <!--project-desc end-->
+            </div> <!--project-desc-wrapper end-->
+            <!--images-->
+            <div class="project-images">
+                <div class="scroll-gradient"></div>
+                <img src="2.jpg">
+                <img src="1.jpg">
+                <img src="3.jpg">
+                <img src="4.jpg">
+                <img src="5.jpg">
+                <img src="6.jpg">
+                <img src="7.jpg">
+                <img src="8.jpg">
+                <img src="9.jpg">
+                <img src="10.jpg">
+            </div> <!--project-images end-->
+        </div>
+    </div> <!--main end-->
+    <script>
+        const projectTitle = document.getElementById("project-title").innerText;
+        const projectInfo = document.getElementById("project-info").innerText;
+
+        const marqueeContentSpans = document.querySelectorAll(".marquee-content");
+
+        marqueeContentSpans.forEach(span => {
+            const formattedText = `&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${projectTitle}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;${projectInfo}`.replace(/\n/g, "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;");
+
+            span.innerHTML = formattedText;
+        });
+    </script>
+</body>
