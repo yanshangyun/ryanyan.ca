@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan's 22</title>
+    <style>
+        @font-face{
+            font-family:"Business";
+            src: url(business.otf);
+        }
+
+        @font-face {
+            font-family:"Ivory";
+            src: url(ivory.otf);
+        }
+        
+        body{
+            font-family:"Ivory";
+            overflow:hidden;
+            font-size:1.1em;
+            width:100%;
+            height:100%;
+        }
+
+        ::selection{
+            background-color:black;
+            color:white;
+        }
+
+        h1{
+            font-family:"Business";
+            margin-bottom:0;
+        }
+
+        a{
+            color:black;
+        }
+
+        .distressed-text{
+            filter:url(#distressedFilter);
+            color:#444;
+        }
+    </style>
+</head>
+<body>
+    <div style="width:100vw; height:100vh; display:flex; justify-content:center; align-items:center; overflow:hidden;">
+        <svg width="0" height="0">
+            <filter id="distressedFilter">
+                <feTurbulence baseFrequency="0.01" numOctaves="3" result="noise"/>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="4"/>
+                <feGaussianBlur stdDeviation="0.5"/>
+                <feComponentTransfer>
+                    <feFuncA type="discrete" tableValues="0 0.3 0.6 0.8 1"/>
+                </feComponentTransfer>
+            </filter>
+        </svg>
+        <div style="width:80%; max-height:80%; margin:100px 0; display:flex; flex-direction:column; justify-content:center; align-items:center; border:1px black solid; max-width:500px; overflow-y:scroll; overflow-x:hidden; padding:50px 0;" class="distressed-text">
+            <div style="position:absolute; top:0; left:0; width:100%; background-color:black; color:white;padding:5px;">
+                Invite from Ryan:
+            </div>
+            <img src="miitopia.png" style="margin-top:100px; width:50%;">
+            <h1 style="text-align:center">Join my party!</h1>
+            <p style="text-align:center; margin:20px;">
+                Calling all knights, archers, priests, mages! The demon lord (Ryan) is being resurrected for the 22nd time! Come help stop the evil!
+                <br>
+                <br>
+                July 12
+                <br>
+                6:30 PM
+                <br>
+                754 Grand St
+                <br>
+                Apt 3F
+                <br>
+                <br>
+                Show up in your <a href="https://en.wikipedia.org/wiki/Character_class" target="_blank">class.</a> RSVP Below!
+            </p>
+            <div style="background-color:white; padding:20px;
+            border:1px solid black; color:black; margin:0px 20px;">
+                <form id="rsvpForm">
+                    <label for="name">Username</label>
+                    <br>
+                    <div style="display:flex;">
+                        <input type="text" id="name" name="name" autocomplete="off" required style="width:100%">
+                        <button type="submit" style="background-color:black; color:white; font-family:'Ivory'; margin-left:5px;">Join</button>
+                    </div>
+                    <div id="message"></div>
+                </form>
+                <br>
+                Party Members:
+                <div id="namesList"></div>  
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAk3Nmx-6736QiYSPvmyjBTNMwIji_IqPU",
+            authDomain: "birthday-35ad5.firebaseapp.com",
+            projectId: "birthday-35ad5",
+            storageBucket: "birthday-35ad5.firebasestorage.app",
+            messagingSenderId: "173595497686",
+            appId: "1:173595497686:web:81f8fb615d102516c82577",
+            measurementId: "G-T6PS02XQPT"
+        };
+
+        //initialize firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        //load existing names
+        function loadNames() {
+            const namesList = document.getElementById('namesList');
+            
+            onSnapshot(collection(db, 'rsvps'), (snapshot) => {
+                namesList.innerHTML = '';
+                snapshot.forEach(doc => {
+                    const data = doc.data();
+                    const nameDiv = document.createElement('span');
+                    nameDiv.textContent = data.name + ", ";
+                    namesList.appendChild(nameDiv);
+                });
+            });
+        }
+
+        //form submission handler
+        document.getElementById('rsvpForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const message = document.getElementById('message');
+            const name = document.getElementById('name').value;
+            
+            try {
+                //add to firestore
+                await addDoc(collection(db, 'rsvps'), {
+                    name: name,
+                    timestamp: serverTimestamp()
+                });
+                
+                //show success message
+                message.textContent = "You've joined the party!";
+                
+                //reset form
+                document.getElementById('rsvpForm').reset();
+                
+            } catch (error) {
+                console.error('Error adding document: ', error);
+                message.textContent = 'Error - please try again.';
+            }
+        });
+
+        //load names when page loads
+        loadNames();
+    </script>
+</body>
+</html>
