@@ -108,10 +108,6 @@
             margin:20px 0;
         }
 
-        .spacer{
-            height:20px;
-        }
-
         @media (prefers-color-scheme:dark) {
             body{
                 color:white;
@@ -139,6 +135,13 @@
                 border:dashed 0.5px white;
             }
         }
+
+        @media only screen and (max-width: 600px){
+            .window{
+                border:0;
+                width:90vw;
+            }
+        }
     </style>
 </head>
 <body>
@@ -147,12 +150,17 @@
             <!-- <p><a href="">https://ryanyan.ca</a></p> -->
             <p>&nbsp;/) /)<br>( • - •) 𖥔 ݁ ˖𓂃.☘︎&#xFE0E; ݁˖<br>Ryan Yan<br><i>Graphic ∕ Motion Designer</i></p>
             <div class="divider"></div>
+            <br>
             <p>Designing at <a href="https://pentagram.com" target="_blank">Pentagram</a>.</p>
             <p>&emsp;↳ Previously at <a href="https://apple.com" target="_blank">Apple</a>, <a href="https://risdguild.com" target="_blank">RISD Design Guild</a>, <a href="https://madebynothing.com" target="_blank">Nothing Design Studio</a>.</p>
             <p></p>
             <p><br><br>Mail → hello (at) ryanyan.ca<br><a href="https://instagram.com/yanshngyun" target="_blank">Instagram</a> <a href="https://ryanyan.garden" target="_blank">Garden</a></p>
             <iframe class="arena" src="https://www.are.na/ryan-yan/ryanyan/embed" title="Ryan Yan Portfolio"></iframe>
-            <p style="text-align:left">❋ Last updated → 08/04/2025</p>
+            <div id="block-wrapper"></div>
+            <div style="width:100%; display:flex; flex-direction:row; justify-content:space-between">
+                <p style="text-align:left">❋ HTML last updated → 10/25/2025</p>
+                <!-- <p style="text-align:right">Website theme determined by device theme</p> -->
+            </div>
         </div>
     </div>
     <script>
